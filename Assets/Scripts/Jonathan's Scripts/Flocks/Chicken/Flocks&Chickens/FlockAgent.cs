@@ -45,13 +45,6 @@ public class FlockAgent : MonoBehaviour
         ps = transform.GetChild(0).GetComponent<ParticleSystem>();
     }
 
-    private void OnEnable()
-    {
-        if (ps.time == 0)
-        {
-            ps.gameObject.SetActive(false);
-        }
-    }
 
     private void Update()
     {

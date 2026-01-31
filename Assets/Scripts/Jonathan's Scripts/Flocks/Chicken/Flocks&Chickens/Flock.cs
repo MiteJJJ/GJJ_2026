@@ -28,7 +28,6 @@ public class Flock: MonoBehaviour
     public float SquareAvoidanceRadius { get { return squareAvoidanceRadius; } }
 
     // Variables used to avoid from
-    public Transform fox;
     public Transform egg;
     public Transform fur;
 
