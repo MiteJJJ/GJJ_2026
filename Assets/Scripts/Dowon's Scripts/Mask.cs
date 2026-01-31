@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,6 +15,9 @@ public class Mask : MonoBehaviour
     private int feathersNeeded = 3;
     private Coroutine maskRoutine;
 
+    [Header("UI")]
+    public TMP_Text featherCountText = null;
+        
     public void OnUseMask()
     {
         if (Fox.Masked)
@@ -35,7 +39,17 @@ public class Mask : MonoBehaviour
         if (other.CompareTag("Feather"))
         {
             featherCount++;
+            featherCount = Math.Min(featherCount, feathersNeeded);
             Destroy(other.gameObject);
+
+            if (featherCountText)
+            {
+                featherCountText.text = "Feathers: " + featherCount + " / " + feathersNeeded;
+            }
+            else
+            {
+                Debug.LogWarning("Set up reference to Feather Count UI");
+            }
         }
     }
 
