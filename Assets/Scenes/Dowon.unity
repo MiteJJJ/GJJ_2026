@@ -1382,18 +1382,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3331959607132551229, guid: 2c97d1e49fbdf30478cac7d990ea937b, type: 3}
-      propertyPath: m_Center.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3331959607132551229, guid: 2c97d1e49fbdf30478cac7d990ea937b, type: 3}
-      propertyPath: m_Center.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3331959607132551229, guid: 2c97d1e49fbdf30478cac7d990ea937b, type: 3}
-      propertyPath: m_Center.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3405045310732546683, guid: 2c97d1e49fbdf30478cac7d990ea937b, type: 3}
       propertyPath: m_Name
       value: Fox
