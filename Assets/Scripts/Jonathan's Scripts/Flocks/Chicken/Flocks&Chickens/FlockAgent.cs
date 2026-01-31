@@ -36,6 +36,8 @@ public class FlockAgent : MonoBehaviour
     float baseSpeed = 1f;
     float currentSpeed;
 
+    Vector3 desiredDirection;
+
     void Awake()
     {
         agentCollider = GetComponent<Collider>();
@@ -58,17 +60,14 @@ public class FlockAgent : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // use physics (torque) to rotate toward movement direction on XZ plane
-        Vector3 vel = chickenRigidbody.linearVelocity;
-        vel.y = 0f;
-        if (vel.sqrMagnitude > 0.001f)
+        // use physics (torque) to rotate toward the behavior direction on XZ plane
+        if (desiredDirection.sqrMagnitude > 0.001f)
         {
-            Vector3 desiredForward = vel.normalized;
             Vector3 currentForward = transform.forward;
             currentForward.y = 0f;
             if (currentForward.sqrMagnitude < 0.0001f) currentForward = Vector3.forward;
 
-            float angle = Vector3.SignedAngle(currentForward, desiredForward, Vector3.up);
+            float angle = Vector3.SignedAngle(currentForward, desiredDirection.normalized, Vector3.up);
 
             // proportional controller: convert angle (deg) to a torque value
             float torque = angle * Mathf.Deg2Rad * rotationTorque;
@@ -86,9 +85,9 @@ public class FlockAgent : MonoBehaviour
     }
     public void Move(Vector3 direction)
     {
-        Vector3 dir = direction;
-        dir.y = 0f;
-        chickenRigidbody.AddForce(dir.normalized * normalForce);
+        direction.y = 0f;
+        desiredDirection = direction;
+        chickenRigidbody.AddForce(transform.forward * normalForce);
     }
 
     private void OnCollisionEnter(Collision collision)
