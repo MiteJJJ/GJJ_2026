@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cfd298d0a28bf9844a1cfad49fcad2e1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.3
+      value: 4.56
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cfd298d0a28bf9844a1cfad49fcad2e1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -64,13 +64,77 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7961838025997192566, guid: cfd298d0a28bf9844a1cfad49fcad2e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -7839311381171573472, guid: cfd298d0a28bf9844a1cfad49fcad2e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -6053026181013756029, guid: cfd298d0a28bf9844a1cfad49fcad2e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -5983109107926507294, guid: cfd298d0a28bf9844a1cfad49fcad2e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -2702228264716332127, guid: cfd298d0a28bf9844a1cfad49fcad2e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -1860718312804986736, guid: cfd298d0a28bf9844a1cfad49fcad2e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -1736718265518564125, guid: cfd298d0a28bf9844a1cfad49fcad2e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cfd298d0a28bf9844a1cfad49fcad2e1, type: 3}
       propertyPath: m_Name
       value: chicken
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cfd298d0a28bf9844a1cfad49fcad2e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cfd298d0a28bf9844a1cfad49fcad2e1, type: 3}
       propertyPath: m_TagString
       value: Chicken
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750564153565852523, guid: cfd298d0a28bf9844a1cfad49fcad2e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2224958006154782626, guid: cfd298d0a28bf9844a1cfad49fcad2e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3356906495521534739, guid: cfd298d0a28bf9844a1cfad49fcad2e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3720585532278955338, guid: cfd298d0a28bf9844a1cfad49fcad2e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518815898109463145, guid: cfd298d0a28bf9844a1cfad49fcad2e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5411902604444728970, guid: cfd298d0a28bf9844a1cfad49fcad2e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783693320055790599, guid: cfd298d0a28bf9844a1cfad49fcad2e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9053749580672608258, guid: cfd298d0a28bf9844a1cfad49fcad2e1, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -84,10 +148,10 @@ PrefabInstance:
       addedObject: {fileID: 2702328570449902280}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cfd298d0a28bf9844a1cfad49fcad2e1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -5005731610375998302}
+      addedObject: {fileID: 7116915381642064350}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cfd298d0a28bf9844a1cfad49fcad2e1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7116915381642064350}
+      addedObject: {fileID: 8521316049110920855}
   m_SourcePrefab: {fileID: 100100000, guid: cfd298d0a28bf9844a1cfad49fcad2e1, type: 3}
 --- !u!1 &7049914371438293961 stripped
 GameObject:
@@ -126,7 +190,7 @@ Rigidbody:
   serializedVersion: 5
   m_Mass: 2
   m_LinearDamping: 0
-  m_AngularDamping: 0.1
+  m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -143,8 +207,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!65 &-5005731610375998302
-BoxCollider:
+--- !u!114 &7116915381642064350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7049914371438293961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a58f4e31e8ec584d8243a718eccdc6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlockAgent
+  minForce: 3
+  maxForce: 5
+  escapeMultiplyer: 120
+  rotationTorque: 18
+  rotationDamping: 3
+  animationSpeedScalar: 0.05
+--- !u!136 &8521316049110920855
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -161,23 +243,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.64, y: 1, z: 0.92}
-  m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &7116915381642064350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7049914371438293961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a58f4e31e8ec584d8243a718eccdc6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FlockAgent
-  minEscapeForce: 20
-  maxEscapeForce: 40
-  escapeMultiplyer: 120
-  rotationTorque: 10
-  rotationDamping: 2
+  serializedVersion: 2
+  m_Radius: 0.32
+  m_Height: 1.14
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.54, z: 0}

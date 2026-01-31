@@ -302,7 +302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7682441023476230515, guid: 89c79ca5164527e489d2605a87ec76cb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.3
+      value: 4.56
       objectReference: {fileID: 0}
     - target: {fileID: 7682441023476230515, guid: 89c79ca5164527e489d2605a87ec76cb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -485,12 +485,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Flock
   agentPrefab:
-  - {fileID: 1899648488}
+  - {fileID: 7116915381642064350, guid: 89c79ca5164527e489d2605a87ec76cb, type: 3}
   behavior: {fileID: 11400000, guid: 53d1fc583881f8b40971c04b29e95ddb, type: 2}
-  startingCount: 20
+  startingCount: 200
   borderLength: 70
-  neighborRadius: 2.5
-  avoidanceRadiusMultiplier: 0.5
+  neighborRadius: 4
+  avoidanceRadiusMultiplier: 0.9
   egg: {fileID: 6295439990734696745, guid: 00855c86f38cd824287fa1bf12b1acc9, type: 3}
   fur: {fileID: 7724165594448134390, guid: 269f5c65ed90c8d4c8d33504997ba549, type: 3}
   fishSpawnPoint: {x: 0, y: 0, z: 0}
@@ -618,7 +618,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.01, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 64.683, y: 64.683, z: 64.683}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -770,17 +770,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7682441023476230515, guid: 89c79ca5164527e489d2605a87ec76cb, type: 3}
   m_PrefabInstance: {fileID: 153325956}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1899648488 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7116915381642064350, guid: 89c79ca5164527e489d2605a87ec76cb, type: 3}
-  m_PrefabInstance: {fileID: 153325956}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a58f4e31e8ec584d8243a718eccdc6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FlockAgent
 --- !u!1001 &7723670958983541600
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -793,9 +782,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: egg
       objectReference: {fileID: 0}
+    - target: {fileID: 1614537540516725149, guid: 00855c86f38cd824287fa1bf12b1acc9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6295439990734696745, guid: 00855c86f38cd824287fa1bf12b1acc9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.3
+      value: -23.6
       objectReference: {fileID: 0}
     - target: {fileID: 6295439990734696745, guid: 00855c86f38cd824287fa1bf12b1acc9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -851,12 +844,16 @@ PrefabInstance:
       value: fur
       objectReference: {fileID: 0}
     - target: {fileID: 3075528942275699218, guid: 269f5c65ed90c8d4c8d33504997ba549, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3075528942275699218, guid: 269f5c65ed90c8d4c8d33504997ba549, type: 3}
       propertyPath: m_TagString
       value: Feather
       objectReference: {fileID: 0}
     - target: {fileID: 7724165594448134390, guid: 269f5c65ed90c8d4c8d33504997ba549, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.936749
+      value: -0.9
       objectReference: {fileID: 0}
     - target: {fileID: 7724165594448134390, guid: 269f5c65ed90c8d4c8d33504997ba549, type: 3}
       propertyPath: m_LocalPosition.y

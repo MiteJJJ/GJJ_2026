@@ -15,9 +15,9 @@ public class FlockAgent : MonoBehaviour
     Rigidbody chickenRigidbody;
 
     [Range(1f, 100f)]
-    public float minEscapeForce = 1f;
+    public float minForce = 1f;
     [Range(1f, 100f)]
-    public float maxEscapeForce = 4f;
+    public float maxForce = 4f;
 
     float normalForce;
     float escapeForce;
@@ -28,6 +28,8 @@ public class FlockAgent : MonoBehaviour
     public float rotationTorque = 10f;
     [Tooltip("Damping applied to angular velocity (higher = faster settling)")]
     public float rotationDamping = 2f;
+    [Range(0f, 1f)]
+    public float animationSpeedScalar;
 
     Animator animator;
     int scalarHash;
@@ -36,8 +38,6 @@ public class FlockAgent : MonoBehaviour
     float baseSpeed = 1f;
     float currentSpeed;
 
-    Vector3 desiredDirection;
-
     void Awake()
     {
         agentCollider = GetComponent<Collider>();
@@ -45,8 +45,9 @@ public class FlockAgent : MonoBehaviour
         animator = GetComponent<Animator>();
         scalarHash = Animator.StringToHash("Scalar");
 
-        normalForce = Random.Range(minEscapeForce, maxEscapeForce);
+        normalForce = Random.Range(minForce, maxForce);
         escapeForce = escapeMultiplyer * normalForce;
+        animationSpeedScalar = 0.5f;
     }
 
 
@@ -54,20 +55,23 @@ public class FlockAgent : MonoBehaviour
     {
         // read speed from the physics velocity and update animator
         currentSpeed = chickenRigidbody.linearVelocity.magnitude;
-        animatorScalar = currentSpeed / baseSpeed;
+        animatorScalar = currentSpeed / baseSpeed * animationSpeedScalar;
         animator.SetFloat(scalarHash, animatorScalar);
     }
 
     private void FixedUpdate()
     {
-        // use physics (torque) to rotate toward the behavior direction on XZ plane
-        if (desiredDirection.sqrMagnitude > 0.001f)
+        // use physics (torque) to rotate toward movement direction on XZ plane
+        Vector3 vel = chickenRigidbody.linearVelocity;
+        vel.y = 0f;
+        if (vel.sqrMagnitude > 0.001f)
         {
+            Vector3 desiredForward = vel.normalized;
             Vector3 currentForward = transform.forward;
             currentForward.y = 0f;
             if (currentForward.sqrMagnitude < 0.0001f) currentForward = Vector3.forward;
 
-            float angle = Vector3.SignedAngle(currentForward, desiredDirection.normalized, Vector3.up);
+            float angle = Vector3.SignedAngle(currentForward, desiredForward, Vector3.up);
 
             // proportional controller: convert angle (deg) to a torque value
             float torque = angle * Mathf.Deg2Rad * rotationTorque;
@@ -85,9 +89,14 @@ public class FlockAgent : MonoBehaviour
     }
     public void Move(Vector3 direction)
     {
-        direction.y = 0f;
-        desiredDirection = direction;
-        chickenRigidbody.AddForce(transform.forward * normalForce);
+        Vector3 dir = direction;
+        dir.y = 0f;
+        if (dir.sqrMagnitude > 0.001f)
+        {
+            Vector3 targetVelocity = dir.normalized * normalForce;
+            targetVelocity.y = chickenRigidbody.linearVelocity.y; // preserve gravity
+            chickenRigidbody.linearVelocity = targetVelocity;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 364405216047927225}
   m_Layer: 0
   m_Name: fur
-  m_TagString: Untagged
+  m_TagString: Feather
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
