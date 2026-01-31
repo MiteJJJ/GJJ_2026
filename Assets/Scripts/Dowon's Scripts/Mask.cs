@@ -10,6 +10,8 @@ public class Mask : MonoBehaviour
 
     [SerializeField]
     private int featherCount = 0;
+    [SerializeField]
+    private int feathersNeeded = 3;
     private Coroutine maskRoutine;
 
     public void OnUseMask()
@@ -18,9 +20,13 @@ public class Mask : MonoBehaviour
         {
             ExitMaskedState();
         }
-        else if (featherCount > 0)
+        else if (featherCount >= feathersNeeded)
         {
             EnterMaskedState();
+        }
+        else
+        {
+            Debug.Log("Not enough feathers! Currently " + featherCount);
         }
     }
 
@@ -43,7 +49,7 @@ public class Mask : MonoBehaviour
 
         maskRoutine = StartCoroutine(MaskTimer());
 
-        Debug.Log("++Entered masked state++");
+        Debug.Log("Entered masked state");
     }
 
     private void ExitMaskedState()
@@ -56,7 +62,7 @@ public class Mask : MonoBehaviour
 
         Fox.Masked = false;
 
-        Debug.Log("--Exited masked state--");
+        Debug.Log("Exited masked state");
     }
 
     private IEnumerator MaskTimer()
