@@ -484,11 +484,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53edb27ca9c0c5943b4b58c15536e867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Flock
-  id: 0
   agentPrefab:
   - {fileID: 1899648488}
-  behavior: {fileID: 0}
-  startingCount: 30
+  behavior: {fileID: 11400000, guid: 53d1fc583881f8b40971c04b29e95ddb, type: 2}
+  startingCount: 20
+  borderLength: 70
   neighborRadius: 2.5
   avoidanceRadiusMultiplier: 0.5
   egg: {fileID: 6295439990734696745, guid: 00855c86f38cd824287fa1bf12b1acc9, type: 3}
@@ -795,7 +795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6295439990734696745, guid: 00855c86f38cd824287fa1bf12b1acc9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.01692009
+      value: 7.3
       objectReference: {fileID: 0}
     - target: {fileID: 6295439990734696745, guid: 00855c86f38cd824287fa1bf12b1acc9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -849,6 +849,10 @@ PrefabInstance:
     - target: {fileID: 3075528942275699218, guid: 269f5c65ed90c8d4c8d33504997ba549, type: 3}
       propertyPath: m_Name
       value: fur
+      objectReference: {fileID: 0}
+    - target: {fileID: 3075528942275699218, guid: 269f5c65ed90c8d4c8d33504997ba549, type: 3}
+      propertyPath: m_TagString
+      value: Feather
       objectReference: {fileID: 0}
     - target: {fileID: 7724165594448134390, guid: 269f5c65ed90c8d4c8d33504997ba549, type: 3}
       propertyPath: m_LocalPosition.x

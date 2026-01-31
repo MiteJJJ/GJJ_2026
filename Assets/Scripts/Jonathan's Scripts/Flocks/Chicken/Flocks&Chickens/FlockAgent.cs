@@ -12,16 +12,22 @@ public class FlockAgent : MonoBehaviour
     Collider agentCollider;
     public Collider AgentCollider { get { return agentCollider; } }
 
-    Rigidbody fishRigidbody;
+    Rigidbody chickenRigidbody;
 
-    [Range(1f, 10f)]
-    public float minSwimForce = 1f;
-    [Range(1f, 10f)]
-    public float maxSwimForce = 4f;
+    [Range(1f, 100f)]
+    public float minEscapeForce = 1f;
+    [Range(1f, 100f)]
+    public float maxEscapeForce = 4f;
 
-    float swimForce;
+    float normalForce;
     float escapeForce;
     public float escapeMultiplyer = 120f;
+
+    [Header("Rotation Physics")]
+    [Tooltip("Torque multiplier used to rotate the agent toward movement direction")]
+    public float rotationTorque = 10f;
+    [Tooltip("Damping applied to angular velocity (higher = faster settling)")]
+    public float rotationDamping = 2f;
 
     Animator animator;
     int scalarHash;
@@ -29,61 +35,69 @@ public class FlockAgent : MonoBehaviour
 
     float baseSpeed = 1f;
     float currentSpeed;
-    ParticleSystem ps;
-
-    Collider circleCollider;
 
     void Awake()
     {
         agentCollider = GetComponent<Collider>();
-        fishRigidbody = GetComponent<Rigidbody>();
+        chickenRigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         scalarHash = Animator.StringToHash("Scalar");
 
-        swimForce = Random.Range(minSwimForce, maxSwimForce);
-        escapeForce = escapeMultiplyer * swimForce;
-        ps = transform.GetChild(0).GetComponent<ParticleSystem>();
+        normalForce = Random.Range(minEscapeForce, maxEscapeForce);
+        escapeForce = escapeMultiplyer * normalForce;
     }
 
 
     private void Update()
     {
-        currentSpeed = fishRigidbody.linearVelocity.magnitude;
-        //set the animation clip in the animator to the playSpeed here
+        // read speed from the physics velocity and update animator
+        currentSpeed = chickenRigidbody.linearVelocity.magnitude;
         animatorScalar = currentSpeed / baseSpeed;
         animator.SetFloat(scalarHash, animatorScalar);
-        //face the movement direction on the XZ plane
-        Vector3 vel = fishRigidbody.linearVelocity;
+    }
+
+    private void FixedUpdate()
+    {
+        // use physics (torque) to rotate toward movement direction on XZ plane
+        Vector3 vel = chickenRigidbody.linearVelocity;
         vel.y = 0f;
         if (vel.sqrMagnitude > 0.001f)
         {
-            transform.rotation = Quaternion.LookRotation(vel);
+            Vector3 desiredForward = vel.normalized;
+            Vector3 currentForward = transform.forward;
+            currentForward.y = 0f;
+            if (currentForward.sqrMagnitude < 0.0001f) currentForward = Vector3.forward;
+
+            float angle = Vector3.SignedAngle(currentForward, desiredForward, Vector3.up);
+
+            // proportional controller: convert angle (deg) to a torque value
+            float torque = angle * Mathf.Deg2Rad * rotationTorque;
+
+            // apply torque around Y and damp existing angular velocity
+            Vector3 targetTorque = Vector3.up * torque;
+            Vector3 damping = -chickenRigidbody.angularVelocity * rotationDamping;
+            chickenRigidbody.AddTorque(targetTorque + damping, ForceMode.Acceleration);
         }
-     }
+    }
 
     public void Initialize(Flock flock)
     {
         agentFlock = flock;
-        circleCollider = agentFlock.player.GetComponent<Collider>();
-        ps.trigger.SetCollider(0, circleCollider);
     }
     public void Move(Vector3 direction)
     {
         Vector3 dir = direction;
         dir.y = 0f;
-        fishRigidbody.AddForce(dir.normalized * swimForce);
+        chickenRigidbody.AddForce(dir.normalized * normalForce);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "paddle")
+        if (collision.gameObject.tag == "Player")
         {
-            // Start the particle system on collision
-            ps.gameObject.SetActive(true);
-            ps.Play();
             Vector3 flee = (transform.position - agentFlock.player.position);
             flee.y = 0f;
-            fishRigidbody.AddForce(flee.normalized * escapeForce);
+            chickenRigidbody.AddForce(flee.normalized * escapeForce);
         }
     }
 }

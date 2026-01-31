@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da716fda988d42d4f936a4a918d6de93, type: 3}
-  m_Name: Avoid Paddle Head Behavior
-  m_EditorClassIdentifier: 
-  avoidPaddleHeadDistance: 5
+  m_Script: {fileID: 11500000, guid: 71e941144c4495f46b00c3161d587816, type: 3}
+  m_Name: Avoid Egg Behavior
+  m_EditorClassIdentifier: Assembly-CSharp::AvoidEggBehavior
+  avoidEggDistance: 5

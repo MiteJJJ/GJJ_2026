@@ -6,15 +6,13 @@ using UnityEngine;
 
 public class Flock: MonoBehaviour
 {
-    [SerializeField]
-    public int id;
     public List<FlockAgent> agentPrefab;
     List<FlockAgent> agents = new List<FlockAgent>();
     public FlockBehavior behavior;
 
     [Range(1, 500)]
     public int startingCount = 250;
-    const float AgentDensity = 0.5f;
+    public float borderLength = 20f;
 
     [Range(1f, 10f)]
     public float neighborRadius = 1.5f;
@@ -63,7 +61,11 @@ public class Flock: MonoBehaviour
             {
                 int randomIndex = Random.Range(0, 2);
                 float currentYRotation = yRotation[randomIndex];
-                Vector2 random2D = Random.insideUnitCircle * startingCount * AgentDensity;
+                // spawn inside a square area instead of a circle
+                Vector2 random2D = new Vector2(
+                    Random.Range(-borderLength / 2, borderLength / 2),
+                    Random.Range(-borderLength / 2, borderLength / 2)
+                );
                 Vector3 spawnPos = fishSpawnPoint + new Vector3(random2D.x, 0f, random2D.y);
                 FlockAgent newAgent = Instantiate(
                     agentPrefab[j],
@@ -71,13 +73,13 @@ public class Flock: MonoBehaviour
                     Quaternion.Euler(0, currentYRotation, 0),
                     transform
                     );
-                newAgent.name = "Agent: " + (j * numberOfFishes + i + 1) + " type: " + j + " group: " + id;
+                newAgent.name = "Agent: " + (j * numberOfFishes + i + 1) + " type: " + j;
                 newAgent.Initialize(this);
                 agents.Add(newAgent);
             }
         }
 
-        layerIndex = LayerMask.NameToLayer("SeaAnimal");
+        layerIndex = LayerMask.NameToLayer("Animal");
         layerMask = 1 << layerIndex;
     }
 
@@ -103,7 +105,7 @@ public class Flock: MonoBehaviour
         Collider[] contextColliders = Physics.OverlapSphere(agent.transform.position, neighborRadius, layerMask);
         foreach (Collider c in contextColliders)
         {
-            if (c != agent.AgentCollider && c.gameObject.tag == "Fish")
+            if (c != agent.AgentCollider && c.gameObject.tag == "Chicken")
             {
                 context.Add(c.transform);
             }
