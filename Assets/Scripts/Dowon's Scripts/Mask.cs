@@ -41,7 +41,7 @@ public class Mask : MonoBehaviour
 
     private void EnterMaskedState()
     {
-        featherCount--;
+        featherCount = 0;
         Fox.Masked = true;
 
         if (maskRoutine != null)
@@ -68,7 +68,6 @@ public class Mask : MonoBehaviour
     private IEnumerator MaskTimer()
     {
         yield return new WaitForSeconds(maskDuration);
-        Fox.Masked = false;
-        maskRoutine = null;
+        ExitMaskedState();
     }
 }
