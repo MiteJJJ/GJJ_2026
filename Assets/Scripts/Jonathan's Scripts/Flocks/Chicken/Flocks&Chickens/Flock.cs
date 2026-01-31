@@ -104,7 +104,6 @@ public class Flock: MonoBehaviour
         //it seems that it includes stones here as well
         List<Transform> context = new List<Transform>();
         Collider[] contextColliders = Physics.OverlapSphere(agent.transform.position, neighborRadius, layerMask);
-        Debug.Log(contextColliders.Length);
         foreach (Collider c in contextColliders)
         {
             if (c != agent.AgentCollider && c.gameObject.tag == "Chicken")
