@@ -7,6 +7,7 @@ TagManager:
   - Chicken
   - Egg
   - Feather
+  - Foxhole
   layers:
   - Default
   - TransparentFX
