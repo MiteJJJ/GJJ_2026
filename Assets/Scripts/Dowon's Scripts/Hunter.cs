@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 
 public class Hunter : MonoBehaviour
@@ -11,21 +12,49 @@ public class Hunter : MonoBehaviour
     GameObject incomingAttackPF;
 
     [Header("Spawn Settings")]
-    public float spawnInterval = 2f;
-    public float spawnIntervalInit = 5f;
-    public float spawnIntervalDecrease = 0.1f;
-    public float spawnIntervalMin = 0.5f;
-    public float radius = 500f;
+    public AnimationCurve spawnIntervalCurve;
+    // When max difficulty will be reached
+    public float curveDuration = 60f;
+    // spawn interval at max difficulty
+    public float curveMax = 0.1f;
+    // spawn interval at min difficulty
+    public float curveMin = 5.0f;
+    // where on the cureve we are at right now
+    [SerializeField]
+    float progress = 0.0f;
 
     bool wasMasked = false;
+
+    public float radius;
 
     private Coroutine spawnRoutine;
     public AudioManager audioManager;
 
     void Start()
     {
-        spawnInterval = spawnIntervalInit;
+        progress = 0f;
         spawnRoutine = StartCoroutine(SpawnLoop());
+    }
+
+    private void Update()
+    {
+        // If masked → reset difficulty and pause
+        if (Fox.Masked)
+        {
+            if (!wasMasked)
+            {
+                progress = 0f;
+                wasMasked = true;
+            }
+            return;
+        }
+        else
+        {
+            progress += Time.deltaTime / curveDuration;
+            progress = Mathf.Clamp01(progress);
+        }
+
+        wasMasked = false;
     }
 
     private IEnumerator SpawnLoop()
@@ -35,25 +64,17 @@ public class Hunter : MonoBehaviour
             // 🔒 Pause here while masked
             yield return new WaitUntil(() => !Fox.Masked);
 
-            if (wasMasked)
-            {
-                spawnInterval = spawnIntervalInit;
-                wasMasked = false;
-            }
-
             // Spawn
             SpawnAtRandomCirclePoint();
 
-            spawnInterval -= spawnIntervalDecrease;
-            spawnInterval = Mathf.Max(spawnInterval, spawnIntervalMin);
+            float curveValue = spawnIntervalCurve.Evaluate(progress);
+            float spawnInterval = Mathf.Lerp(
+                curveMin,   // slow (early)
+                curveMax,   // fast (late)
+                curveValue
+            );
 
             yield return new WaitForSeconds(spawnInterval);
-
-            // Detect masking after the wait
-            if (Fox.Masked)
-            {
-                wasMasked = true;
-            }
         }
     }
 

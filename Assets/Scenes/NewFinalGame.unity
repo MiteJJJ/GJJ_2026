@@ -2619,6 +2619,50 @@ PrefabInstance:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 941786597}
+    - target: {fileID: 5619472136572271219, guid: b7397334c45d7df4fb75cbfcba12d825, type: 3}
+      propertyPath: spawnIntervalMin
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619472136572271219, guid: b7397334c45d7df4fb75cbfcba12d825, type: 3}
+      propertyPath: spawnIntervalDecrease
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619472136572271219, guid: b7397334c45d7df4fb75cbfcba12d825, type: 3}
+      propertyPath: spawnIntervalCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619472136572271219, guid: b7397334c45d7df4fb75cbfcba12d825, type: 3}
+      propertyPath: spawnIntervalCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619472136572271219, guid: b7397334c45d7df4fb75cbfcba12d825, type: 3}
+      propertyPath: spawnIntervalCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619472136572271219, guid: b7397334c45d7df4fb75cbfcba12d825, type: 3}
+      propertyPath: spawnIntervalCurve.m_Curve.Array.data[0].inSlope
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619472136572271219, guid: b7397334c45d7df4fb75cbfcba12d825, type: 3}
+      propertyPath: spawnIntervalCurve.m_Curve.Array.data[1].inSlope
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619472136572271219, guid: b7397334c45d7df4fb75cbfcba12d825, type: 3}
+      propertyPath: spawnIntervalCurve.m_Curve.Array.data[0].outSlope
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619472136572271219, guid: b7397334c45d7df4fb75cbfcba12d825, type: 3}
+      propertyPath: spawnIntervalCurve.m_Curve.Array.data[1].outSlope
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619472136572271219, guid: b7397334c45d7df4fb75cbfcba12d825, type: 3}
+      propertyPath: spawnIntervalCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619472136572271219, guid: b7397334c45d7df4fb75cbfcba12d825, type: 3}
+      propertyPath: spawnIntervalCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

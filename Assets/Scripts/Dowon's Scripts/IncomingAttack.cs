@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class IncomingAttack : MonoBehaviour
@@ -12,6 +13,8 @@ public class IncomingAttack : MonoBehaviour
     public float aimTime = 3.0f;
     public AudioManager audioManager;
 
+    bool flag = true;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,8 +25,11 @@ public class IncomingAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // follow fox posiiton
-        lineRenderer.SetPosition(1, fox.transform.position + Vector3.up * 5.0f);
+        if (flag)
+        {
+            // follow fox posiiton
+            lineRenderer.SetPosition(1, fox.transform.position + Vector3.up * 5.0f);
+        }
 
         if (Fox.Masked)
         {
@@ -59,6 +65,7 @@ public class IncomingAttack : MonoBehaviour
             Debug.LogWarning("No prefab assigned to spawn!");
         }
 
-        Destroy(gameObject);
+        flag = false;
+        Destroy(gameObject, 1f);
     }
 }
