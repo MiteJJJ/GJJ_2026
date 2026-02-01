@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7535369224960680641}
   m_Layer: 0
   m_Name: Fox
-  m_TagString: Untagged
+  m_TagString: Fox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -212,6 +212,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6d96cb65172512448bab8d1ae205397c, type: 3}
       propertyPath: m_Name
       value: Fox
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076003843059800474, guid: 6d96cb65172512448bab8d1ae205397c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076003843059800474, guid: 6d96cb65172512448bab8d1ae205397c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
