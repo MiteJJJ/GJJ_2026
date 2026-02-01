@@ -1170,10 +1170,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NewFox
       objectReference: {fileID: 0}
-    - target: {fileID: 2695004300401139770, guid: 58b77b409b5dcb344a9972e7e66a0b5d, type: 3}
-      propertyPath: m_TagString
-      value: Fox
-      objectReference: {fileID: 0}
     - target: {fileID: 3327391074011265664, guid: 58b77b409b5dcb344a9972e7e66a0b5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1214,34 +1210,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5138855813914053834, guid: 58b77b409b5dcb344a9972e7e66a0b5d, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 25949553fb2eb3d4fa4632f6e1e37bc7, type: 2}
-    - target: {fileID: 5138855813914053834, guid: 58b77b409b5dcb344a9972e7e66a0b5d, type: 3}
-      propertyPath: 'm_Materials.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 15c1291e9354ed148810928b4dfe5860, type: 2}
-    - target: {fileID: 5138855813914053834, guid: 58b77b409b5dcb344a9972e7e66a0b5d, type: 3}
-      propertyPath: 'm_Materials.Array.data[2]'
-      value: 
-      objectReference: {fileID: 2100000, guid: f0145d3e24cc0f24da1b8da13613af4c, type: 2}
-    - target: {fileID: 5138855813914053834, guid: 58b77b409b5dcb344a9972e7e66a0b5d, type: 3}
-      propertyPath: 'm_Materials.Array.data[3]'
-      value: 
-      objectReference: {fileID: 2100000, guid: ab984f5f0c6819047a498c798ca4f1f9, type: 2}
-    - target: {fileID: 5138855813914053834, guid: 58b77b409b5dcb344a9972e7e66a0b5d, type: 3}
-      propertyPath: 'm_Materials.Array.data[4]'
-      value: 
-      objectReference: {fileID: 2100000, guid: ab984f5f0c6819047a498c798ca4f1f9, type: 2}
     - target: {fileID: 5165435034510791878, guid: 58b77b409b5dcb344a9972e7e66a0b5d, type: 3}
       propertyPath: featherCountText
       value: 
       objectReference: {fileID: 1424484502}
-    - target: {fileID: 7843808268413544541, guid: 58b77b409b5dcb344a9972e7e66a0b5d, type: 3}
-      propertyPath: idle1Probability
-      value: 0.6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
