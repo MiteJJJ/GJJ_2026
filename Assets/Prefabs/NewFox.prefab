@@ -521,6 +521,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fox
   restartButton: {fileID: 0}
+  currentEggText: {fileID: 0}
+  totalEggText: {fileID: 0}
+  totalEggs: 0
+  currentEggs: 0
+  maxEggs: 3
 --- !u!114 &5165435034510791878
 MonoBehaviour:
   m_ObjectHideFlags: 0
