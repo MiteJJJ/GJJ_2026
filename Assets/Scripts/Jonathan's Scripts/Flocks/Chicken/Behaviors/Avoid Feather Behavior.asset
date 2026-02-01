@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 063dd7f0c409a2d45a1cb8bdb07ae6d2, type: 3}
   m_Name: Avoid Feather Behavior
   m_EditorClassIdentifier: Assembly-CSharp::AvoidFeatherBehavior
-  avoidFeatherDistance: 5
+  avoidFeatherDistance: 8
