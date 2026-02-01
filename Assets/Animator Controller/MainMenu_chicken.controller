@@ -58,7 +58,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Chicken_AnimControlelr
+  m_Name: MainMenu_chicken
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Idle
@@ -113,7 +113,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 0, y: 80, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 7106441686321548909}
+  m_DefaultState: {fileID: -3907839849334642518}
 --- !u!1102 &7106441686321548909
 AnimatorState:
   serializedVersion: 6
