@@ -73,7 +73,10 @@ public class Mask : MonoBehaviour
         featherCount++;
         featherCount = Math.Min(featherCount, featherMax);
         UpdateFeatherUI();
-        audioManager.PlayFeatherCollect();
+        if (audioManager != null)
+        {
+            audioManager.PlayFeatherCollect();
+        }
     }
 
     public void RefillFeathers()

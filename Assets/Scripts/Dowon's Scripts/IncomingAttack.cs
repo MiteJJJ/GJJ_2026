@@ -48,7 +48,11 @@ public class IncomingAttack : MonoBehaviour
             Quaternion spawnRot = Quaternion.LookRotation(direction.normalized);
 
             Instantiate(bulletPrefab, spawnPoint, spawnRot);
-            audioManager.PlayGun();
+
+            if (audioManager != null)
+            {
+                audioManager.PlayGun();
+            }
         }
         else
         {

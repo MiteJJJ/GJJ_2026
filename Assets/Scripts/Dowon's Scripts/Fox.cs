@@ -23,6 +23,7 @@ public class Fox : MonoBehaviour
         mask = GetComponent<Mask>();
         updateEggs = GetComponent<UpdateEggs>();
         playFoxAnimation = GetComponent<PlayFoxAnimation>();
+        GetComponent<Rigidbody>().isKinematic = false;
     }
 
     void OnDestroy()
@@ -86,6 +87,7 @@ public class Fox : MonoBehaviour
         playFoxAnimation.Die();
 
         GetComponent<PlayerController>().enabled = false;
+        GetComponent<Rigidbody>().isKinematic = true;
 
         if (restartButton)
         {
