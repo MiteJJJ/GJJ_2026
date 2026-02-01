@@ -637,6 +637,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hunter
       objectReference: {fileID: 0}
+    - target: {fileID: 214181291840883588, guid: b7397334c45d7df4fb75cbfcba12d825, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4865252433485361459, guid: b7397334c45d7df4fb75cbfcba12d825, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1051,6 +1055,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 920731788806790367, guid: 58b77b409b5dcb344a9972e7e66a0b5d, type: 3}
+      propertyPath: m_Size.y
+      value: 2.66
+      objectReference: {fileID: 0}
     - target: {fileID: 2695004300401139770, guid: 58b77b409b5dcb344a9972e7e66a0b5d, type: 3}
       propertyPath: m_Name
       value: NewFox
