@@ -60,8 +60,6 @@ public class IncomingAttack : MonoBehaviour
                 audioManager.PlayGun();
             }
 
-            CameraShake shake = Camera.main.GetComponent<CameraShake>();
-            shake.Shake(1, 10f);
         }
         else
         {
