@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Fox : MonoBehaviour
 {
     public static bool Masked = false;
+
+    public GameObject restartButton;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,5 +41,24 @@ public class Fox : MonoBehaviour
     public void Die()
     {
         Debug.Log("Fox dies");
+
+        GetComponent<PlayerController>().enabled = false;
+
+        if (restartButton)
+        {
+            restartButton.SetActive(true);
+        }
+    }
+
+    public void RestartScene()
+    {
+        if (restartButton)
+        {
+            restartButton.SetActive(false);
+        }
+
+        // Reload the currently active scene
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name);
     }
 }

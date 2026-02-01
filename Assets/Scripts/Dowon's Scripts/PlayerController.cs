@@ -63,9 +63,17 @@ public class PlayerController : MonoBehaviour
         if (!rotateTowardsMovement || moveInput.sqrMagnitude < 0.001f)
             return;
 
+        // Original movement direction
         Vector3 lookDir = new Vector3(moveInput.x, 0f, moveInput.y);
 
+        // Base rotation
         Quaternion targetRotation = Quaternion.LookRotation(lookDir, Vector3.up);
+
+        // Apply -90 degrees Y rotation
+        Quaternion yOffset = Quaternion.Euler(0f, -90f, 0f);
+        targetRotation = targetRotation * yOffset;
+
+        // Smoothly rotate
         rb.MoveRotation(
             Quaternion.RotateTowards(
                 rb.rotation,

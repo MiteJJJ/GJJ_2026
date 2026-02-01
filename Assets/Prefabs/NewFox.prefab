@@ -68,25 +68,57 @@ PrefabInstance:
       propertyPath: m_Name
       value: NewFox
       objectReference: {fileID: 0}
-    - target: {fileID: 8299344916204598877, guid: 6d96cb65172512448bab8d1ae205397c, type: 3}
+    - target: {fileID: 6076003843059800474, guid: 6d96cb65172512448bab8d1ae205397c, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7072302
       objectReference: {fileID: 0}
-    - target: {fileID: 8299344916204598877, guid: 6d96cb65172512448bab8d1ae205397c, type: 3}
+    - target: {fileID: 6076003843059800474, guid: 6d96cb65172512448bab8d1ae205397c, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.7069834
       objectReference: {fileID: 0}
-    - target: {fileID: 8299344916204598877, guid: 6d96cb65172512448bab8d1ae205397c, type: 3}
+    - target: {fileID: 6076003843059800474, guid: 6d96cb65172512448bab8d1ae205397c, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8299344916204598877, guid: 6d96cb65172512448bab8d1ae205397c, type: 3}
+    - target: {fileID: 6076003843059800474, guid: 6d96cb65172512448bab8d1ae205397c, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076003843059800474, guid: 6d96cb65172512448bab8d1ae205397c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -89.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076003843059800474, guid: 6d96cb65172512448bab8d1ae205397c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076003843059800474, guid: 6d96cb65172512448bab8d1ae205397c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299344916204598877, guid: 6d96cb65172512448bab8d1ae205397c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.50008726
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299344916204598877, guid: 6d96cb65172512448bab8d1ae205397c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.49991274
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299344916204598877, guid: 6d96cb65172512448bab8d1ae205397c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.50008726
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299344916204598877, guid: 6d96cb65172512448bab8d1ae205397c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.49991274
       objectReference: {fileID: 0}
     - target: {fileID: 8299344916204598877, guid: 6d96cb65172512448bab8d1ae205397c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -89.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299344916204598877, guid: 6d96cb65172512448bab8d1ae205397c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 8299344916204598877, guid: 6d96cb65172512448bab8d1ae205397c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -208,6 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3713804a29244418bbe0c46144f913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fox
+  restartButton: {fileID: 0}
 --- !u!114 &5165435034510791878
 MonoBehaviour:
   m_ObjectHideFlags: 0
