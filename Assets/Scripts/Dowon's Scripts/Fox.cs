@@ -9,6 +9,11 @@ public class Fox : MonoBehaviour
 
     public Mask mask;
 
+    public int totalEggs = 0;
+    public int currentEggs = 0;
+    public int maxEggs = 3;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,7 +30,14 @@ public class Fox : MonoBehaviour
     {
         if (other.CompareTag("Egg"))
         {
+            if (currentEggs >= maxEggs)
+            {
+                return;
+            }
+
             Debug.Log("Picked up egg");
+            currentEggs += 1;
+            Destroy(other.gameObject);
         }
 
         if (other.CompareTag("Foxhole"))
