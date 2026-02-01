@@ -63,6 +63,19 @@ public class Mask : MonoBehaviour
     //pickup feather
     public void incrementFeather()
     {
+        if (Fox.Masked)
+        {
+            // extend mask duration
+            maskTime += timePerFeather;
+            Debug.Log("Extended mask time by " + timePerFeather + "s");
+            UpdateFeatherUI();
+            if (audioManager != null)
+            {
+                audioManager.PlayFeatherCollect();
+            }
+            return;
+        }
+
         // ignore if full
         if (featherCount == featherMax)
         {
@@ -92,10 +105,9 @@ public class Mask : MonoBehaviour
         if (maskRoutine != null)
             StopCoroutine(maskRoutine);
 
-        maskRoutine = StartCoroutine(MaskTimer());
         maskTime = featherCount * timePerFeather;
-
         featherCount = 0;
+        maskRoutine = StartCoroutine(MaskTimer());
 
         Debug.Log("Entered masked state");
         chickenMask.SetActive(true);
@@ -142,7 +154,10 @@ public class Mask : MonoBehaviour
 
     private IEnumerator MaskTimer()
     {
-        yield return new WaitForSeconds(timePerFeather * featherCount);
+        while (maskTime > 0f)
+        {
+            yield return null;
+        }
         ExitMaskedState();
     }
 }
