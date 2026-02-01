@@ -261,7 +261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &94479791
 Transform:
   m_ObjectHideFlags: 0
@@ -493,7 +493,7 @@ MonoBehaviour:
   featherSpawnInterval: 5
   maxFeathers: 5
   fishSpawnPoint: {x: 0, y: 0, z: 0}
-  player: {fileID: 414367297061747688, guid: 14777d18c0ad9d84d81ead993080c8db, type: 3}
+  player: {fileID: 1205257026}
 --- !u!4 &473204980
 Transform:
   m_ObjectHideFlags: 0
@@ -622,6 +622,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1205257026 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7492722969838834846, guid: 2c97d1e49fbdf30478cac7d990ea937b, type: 3}
+  m_PrefabInstance: {fileID: 1989564437}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1500662397
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,14 +829,6 @@ PrefabInstance:
     - target: {fileID: 3405045310732546683, guid: 2c97d1e49fbdf30478cac7d990ea937b, type: 3}
       propertyPath: m_Name
       value: Fox
-      objectReference: {fileID: 0}
-    - target: {fileID: 7131544231174769376, guid: 2c97d1e49fbdf30478cac7d990ea937b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 7131544231174769376, guid: 2c97d1e49fbdf30478cac7d990ea937b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7492722969838834846, guid: 2c97d1e49fbdf30478cac7d990ea937b, type: 3}
       propertyPath: m_LocalPosition.x

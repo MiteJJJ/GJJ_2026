@@ -9,6 +9,7 @@ TagManager:
   - Feather
   - Foxhole
   - Bullet
+  - Fox
   layers:
   - Default
   - TransparentFX

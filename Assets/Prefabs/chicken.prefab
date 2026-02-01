@@ -221,10 +221,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FlockAgent
   minForce: 3
   maxForce: 5
-  escapeMultiplyer: 120
+  escapeMultiplyer: 500
   rotationTorque: 18
   rotationDamping: 3
   animationSpeedScalar: 0.05
+  foxDetectDistance: 11
+  foxSpeedMultiplier: 5
 --- !u!136 &8521316049110920855
 CapsuleCollider:
   m_ObjectHideFlags: 0
