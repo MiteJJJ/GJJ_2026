@@ -514,8 +514,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5, y: 2.6600006, z: 3.34}
-  m_Center: {x: -0.032406412, y: 1.3500001, z: 0}
+  m_Size: {x: 0.77740926, y: 2.6600006, z: 2.386919}
+  m_Center: {x: 0.004535576, y: 1.3500001, z: 0.47654185}
 --- !u!54 &8586367835041166042
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -556,12 +556,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fox
   restartButton: {fileID: 0}
-  currentEggText: {fileID: 0}
-  totalEggText: {fileID: 0}
-  totalEggs: 0
-  currentEggs: 0
-  maxEggs: 3
   headCollider: {fileID: 4400348376675004193}
+  depositParticle: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &5165435034510791878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,6 +577,7 @@ MonoBehaviour:
   featherCountText: {fileID: 0}
   chickenMask: {fileID: 5090921521417118759}
   maskOn: 0
+  audioManager: {fileID: 0}
 --- !u!114 &4658477434588784478
 MonoBehaviour:
   m_ObjectHideFlags: 0
