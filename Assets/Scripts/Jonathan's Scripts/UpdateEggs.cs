@@ -53,7 +53,7 @@ public class UpdateEggs : MonoBehaviour
     void UpdateUI()
     {
         if (currentEggText)
-            currentEggText.text = "Current: " + currentEggs;
+            currentEggText.text = "Current: " + currentEggs + " / " + maxEggs;
 
         if (totalEggText)
             totalEggText.text = "Total Eggs: " + totalEggs;

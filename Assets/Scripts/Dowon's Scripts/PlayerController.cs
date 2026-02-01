@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private Vector2 moveInput;
 
+    public GameObject pauseMessage;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
