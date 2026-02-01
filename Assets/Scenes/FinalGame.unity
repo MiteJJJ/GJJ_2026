@@ -482,8 +482,8 @@ MonoBehaviour:
   behavior: {fileID: 11400000, guid: 53d1fc583881f8b40971c04b29e95ddb, type: 2}
   startingCount: 200
   borderLength: 70
-  neighborRadius: 4
-  avoidanceRadiusMultiplier: 0.9
+  neighborRadius: 8
+  avoidanceRadiusMultiplier: 0.4
   eggPrefab: {fileID: 2721947343456886812, guid: e7f4053901f48de4ba0bceb31773478e, type: 3}
   featherPrefab: {fileID: 4314632726369200502, guid: 823e7108f8663924991b1dce10503489, type: 3}
   eggSpawnInterval: 10

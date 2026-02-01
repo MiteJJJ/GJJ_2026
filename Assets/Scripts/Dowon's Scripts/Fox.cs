@@ -107,6 +107,7 @@ public class Fox : MonoBehaviour
     public void Die()
     {
         Debug.Log("Fox dies");
+        playFoxAnimation.Die();
 
         GetComponent<PlayerController>().enabled = false;
 

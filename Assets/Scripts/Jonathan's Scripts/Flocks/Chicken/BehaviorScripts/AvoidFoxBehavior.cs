@@ -9,6 +9,10 @@ public class AvoidFoxBehavior : FlockBehavior
 
     public override Vector3 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
+        // chickens don't avoid the fox when masked
+        if (Fox.Masked)
+            return Vector3.zero;
+
         Vector3 avoidMove = Vector3.zero;
         int nAvoid = 0;
         GameObject[] foxes = GameObject.FindGameObjectsWithTag("Fox");

@@ -21,9 +21,14 @@ public class Mask : MonoBehaviour
 
     float maskTime = 0f;
 
+    public GameObject chickenMask;
+    public bool maskOn;
+
     public void Start()
     {
         UpdateFeatherUI();
+        chickenMask.SetActive(false);
+        maskOn = false;
     }
 
     public void OnUseMask()
@@ -88,6 +93,8 @@ public class Mask : MonoBehaviour
         featherCount = 0;
 
         Debug.Log("Entered masked state");
+        chickenMask.SetActive(true);
+        maskOn = true;
     }
 
     private void ExitMaskedState()
@@ -104,6 +111,8 @@ public class Mask : MonoBehaviour
         UpdateFeatherUI();
 
         Debug.Log("Exited masked state");
+        chickenMask.SetActive(false);
+        maskOn = false;
     }
 
     private void UpdateFeatherUI()

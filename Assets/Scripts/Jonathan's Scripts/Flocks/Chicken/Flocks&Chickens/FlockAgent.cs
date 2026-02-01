@@ -69,6 +69,8 @@ public class FlockAgent : MonoBehaviour
     void CheckFoxProximity()
     {
         isNearFox = false;
+        if (Fox.Masked) return;
+
         float sqrDetect = foxDetectDistance * foxDetectDistance;
         GameObject[] foxes = GameObject.FindGameObjectsWithTag("Fox");
         foreach (GameObject f in foxes)
