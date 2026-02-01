@@ -14,6 +14,7 @@ public class UpdateEggs : MonoBehaviour
     int totalEggs = 0;
 
     public static int FinalScore { get; private set; }
+    public AudioManager audioManager;
 
     void Start()
     {
@@ -32,6 +33,7 @@ public class UpdateEggs : MonoBehaviour
         currentEggs++;
         Debug.Log("Picked up Egg. Carrying: " + currentEggs);
         UpdateUI();
+        audioManager.PlayEggCollect();
     }
 
     public void DepositEggs()

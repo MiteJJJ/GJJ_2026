@@ -23,6 +23,7 @@ public class Mask : MonoBehaviour
 
     public GameObject chickenMask;
     public bool maskOn;
+    public AudioManager audioManager;
 
     public void Start()
     {
@@ -72,6 +73,7 @@ public class Mask : MonoBehaviour
         featherCount++;
         featherCount = Math.Min(featherCount, featherMax);
         UpdateFeatherUI();
+        audioManager.PlayFeatherCollect();
     }
 
     public void RefillFeathers()
