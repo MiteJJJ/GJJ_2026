@@ -4846,6 +4846,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8935613092210625773}
   - component: {fileID: 2846718348985216462}
+  - component: {fileID: 3187960746322169496}
   m_Layer: 0
   m_Name: Egg_Scarlet
   m_TagString: Egg
@@ -4895,6 +4896,21 @@ CapsuleCollider:
   m_Height: 4.3497686
   m_Direction: 1
   m_Center: {x: 0, y: 1.6748843, z: 0}
+--- !u!114 &3187960746322169496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2721947343456886812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9edfc8acd8223c044966b19ea200fb50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  playFoxAnimation: {fileID: 0}
+  foxHeadCollider: {fileID: 0}
+  fox: {fileID: 0}
 --- !u!1 &3219651793588103300
 GameObject:
   m_ObjectHideFlags: 0
@@ -5003,7 +5019,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -9926,6 +9942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EggShake
   initialZRotation: 45
+  initialYRotation: 35
   gentleShakeAngle: 5
   gentleShakeSpeed: 3
   bounceHeight: 1.2

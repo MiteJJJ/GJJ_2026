@@ -17,14 +17,20 @@ public class Fox : MonoBehaviour
     public int maxEggs = 3;
 
     PlayFoxAnimation playFoxAnimation;
-    [SerializeField] private Collider pickupCollider;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public Collider headCollider;
+
     void Start()
     {
+        Masked = false;
         mask = GetComponent<Mask>();
         UpdateEggsUI();
         playFoxAnimation = GetComponent<PlayFoxAnimation>();
+    }
+
+    void OnDestroy()
+    {
+        Masked = false;
     }
 
     // Update is called once per frame
@@ -33,28 +39,21 @@ public class Fox : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("Collision Entered: " + collision.gameObject.name);
-    }
-
     //PickUpEggs;
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Trigger Entered: " + other.gameObject.name);
-        if (other.CompareTag("Egg"))
-        {
-            if (currentEggs >= maxEggs)
-            {
-                return;
-            }
+        // Debug.Log("Trigger Entered: " + other.gameObject.name);
+        //if (other.CompareTag("Egg"))
+        //{
+        //    if (currentEggs >= maxEggs)
+        //    {
+        //        return;
+        //    }
 
-            Debug.Log("Picked up egg");
-            //do the pickup animation
-            playFoxAnimation.StartPicking();
-            currentEggs += 1;
-            Destroy(other.gameObject);
-        }
+        //    Debug.Log("Picked up egg");
+        //    currentEggs += 1;
+        //    Destroy(other.gameObject);
+        //}
 
         if (other.CompareTag("Foxhole"))
         {
@@ -75,6 +74,16 @@ public class Fox : MonoBehaviour
             Die();
             Destroy(other.gameObject);
         }
+    }
+
+    public void IncrementEgg()
+    {
+        if (currentEggs >= maxEggs)
+        {
+            return;
+        }
+        Debug.Log("Picked up Egg");
+        currentEggs += 1;
     }
 
     public void UpdateEggsUI()

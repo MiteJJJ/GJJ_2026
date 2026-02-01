@@ -44,6 +44,8 @@ public class Mask : MonoBehaviour
 
     void Update()
     {
+        if (this == null) return;
+
         if (Fox.Masked)
         {
             maskTime -= Time.deltaTime;
@@ -52,23 +54,19 @@ public class Mask : MonoBehaviour
         }
     }
 
-    //pickup mask
-    private void OnTriggerEnter(Collider other)
+    //pickup feather
+    public void incrementFeather()
     {
-        if (other.CompareTag("Feather"))
+        // ignore if full
+        if (featherCount == featherMax)
         {
-            // ignore if full
-            if (featherCount == featherMax)
-            {
-                return;
-            }
-
-            Debug.Log("Picked up feather");
-            featherCount++;
-            featherCount = Math.Min(featherCount, featherMax);
-            Destroy(other.gameObject);
-            UpdateFeatherUI();
+            return;
         }
+
+        Debug.Log("Picked up feather");
+        featherCount++;
+        featherCount = Math.Min(featherCount, featherMax);
+        UpdateFeatherUI();
     }
 
     public void RefillFeathers()

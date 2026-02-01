@@ -117,8 +117,8 @@ ModelImporter:
       name: Eating
       takeName: Eating
       internalID: 3673095150341620287
-      firstFrame: 0
-      lastFrame: 76
+      firstFrame: 8
+      lastFrame: 31
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -821,7 +821,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0

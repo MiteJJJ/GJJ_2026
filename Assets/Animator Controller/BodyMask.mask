@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BodyMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: AnimalArmature
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/BackShoulder.L
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/BackShoulder.L/BackLeg.L
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/BackShoulder.L/BackLeg.L/BackUpperLeg.L
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/BackShoulder.L/BackLeg.L/BackUpperLeg.L/BackLowerLeg.L
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/BackShoulder.L/BackLeg.L/BackUpperLeg.L/BackLowerLeg.L/BackLowerLeg.L_end
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/BackShoulder.R
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/BackShoulder.R/BackLeg.R
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/BackShoulder.R/BackLeg.R/BackUpperLeg.R
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/BackShoulder.R/BackLeg.R/BackUpperLeg.R/BackLowerLeg.R
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/BackShoulder.R/BackLeg.R/BackUpperLeg.R/BackLowerLeg.R/BackLowerLeg.R_end
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/Tail1
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/Tail1/Tail2
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/Tail1/Tail2/Tail3
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/Tail1/Tail2/Tail3/Tail4
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/Tail1/Tail2/Tail3/Tail4/Tail5
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/Tail1/Tail2/Tail3/Tail4/Tail5/Tail6
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/Tail1/Tail2/Tail3/Tail4/Tail5/Tail6/Tail7
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/Tail1/Tail2/Tail3/Tail4/Tail5/Tail6/Tail7/Tail8
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/Tail1/Tail2/Tail3/Tail4/Tail5/Tail6/Tail7/Tail8/Tail8_end
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/Torso
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/Torso/Torso2
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/Torso/Torso2/FrontShoulder.L
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/Torso/Torso2/FrontShoulder.L/FrontUpperLeg.L
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/Torso/Torso2/FrontShoulder.L/FrontUpperLeg.L/FrontLowerLeg.L
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/Torso/Torso2/FrontShoulder.L/FrontUpperLeg.L/FrontLowerLeg.L/FrontLowerLeg.L_end
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/Torso/Torso2/FrontShoulder.R
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/Torso/Torso2/FrontShoulder.R/FrontUpperLeg.R
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/Torso/Torso2/FrontShoulder.R/FrontUpperLeg.R/FrontLowerLeg.R
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/Torso/Torso2/FrontShoulder.R/FrontUpperLeg.R/FrontLowerLeg.R/FrontLowerLeg.R_end
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/Torso/Torso2/Torso3
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/Back/Torso/Torso2/Torso3/Neck1
+    m_Weight: 0
+  - m_Path: AnimalArmature/Body/Back/Torso/Torso2/Torso3/Neck1/Neck2
+    m_Weight: 0
+  - m_Path: AnimalArmature/Body/Back/Torso/Torso2/Torso3/Neck1/Neck2/Neck3
+    m_Weight: 0
+  - m_Path: AnimalArmature/Body/Back/Torso/Torso2/Torso3/Neck1/Neck2/Neck3/Ear1.L
+    m_Weight: 0
+  - m_Path: AnimalArmature/Body/Back/Torso/Torso2/Torso3/Neck1/Neck2/Neck3/Ear1.L/Ear2.L
+    m_Weight: 0
+  - m_Path: AnimalArmature/Body/Back/Torso/Torso2/Torso3/Neck1/Neck2/Neck3/Ear1.L/Ear2.L/Ear3.L
+    m_Weight: 0
+  - m_Path: AnimalArmature/Body/Back/Torso/Torso2/Torso3/Neck1/Neck2/Neck3/Ear1.L/Ear2.L/Ear3.L/Ear4.L
+    m_Weight: 0
+  - m_Path: AnimalArmature/Body/Back/Torso/Torso2/Torso3/Neck1/Neck2/Neck3/Ear1.L/Ear2.L/Ear3.L/Ear4.L/Ear4.L_end
+    m_Weight: 0
+  - m_Path: AnimalArmature/Body/Back/Torso/Torso2/Torso3/Neck1/Neck2/Neck3/Ear1.R
+    m_Weight: 0
+  - m_Path: AnimalArmature/Body/Back/Torso/Torso2/Torso3/Neck1/Neck2/Neck3/Ear1.R/Ear2.R
+    m_Weight: 0
+  - m_Path: AnimalArmature/Body/Back/Torso/Torso2/Torso3/Neck1/Neck2/Neck3/Ear1.R/Ear2.R/Ear3.R
+    m_Weight: 0
+  - m_Path: AnimalArmature/Body/Back/Torso/Torso2/Torso3/Neck1/Neck2/Neck3/Ear1.R/Ear2.R/Ear3.R/Ear4.R
+    m_Weight: 0
+  - m_Path: AnimalArmature/Body/Back/Torso/Torso2/Torso3/Neck1/Neck2/Neck3/Ear1.R/Ear2.R/Ear3.R/Ear4.R/Ear4.R_end
+    m_Weight: 0
+  - m_Path: AnimalArmature/Body/Back/Torso/Torso2/Torso3/Neck1/Neck2/Neck3/Head
+    m_Weight: 0
+  - m_Path: AnimalArmature/Body/Back/Torso/Torso2/Torso3/Neck1/Neck2/Neck3/Head/Head_end
+    m_Weight: 0
+  - m_Path: AnimalArmature/Body/PoleTarget.L
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/PoleTarget.L/PoleTarget.L_end
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/PoleTarget.R
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/PoleTarget.R/PoleTarget.R_end
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/PoleTargetBack.L
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/PoleTargetBack.L/PoleTargetBack.L_end
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/PoleTargetBack.R
+    m_Weight: 1
+  - m_Path: AnimalArmature/Body/PoleTargetBack.R/PoleTargetBack.R_end
+    m_Weight: 1
+  - m_Path: AnimalArmature/IKBackLeg.L
+    m_Weight: 1
+  - m_Path: AnimalArmature/IKBackLeg.L/FFB.L
+    m_Weight: 1
+  - m_Path: AnimalArmature/IKBackLeg.L/FFB.L/FFB.L_end
+    m_Weight: 1
+  - m_Path: AnimalArmature/IKBackLeg.R
+    m_Weight: 1
+  - m_Path: AnimalArmature/IKBackLeg.R/FFB.R
+    m_Weight: 1
+  - m_Path: AnimalArmature/IKBackLeg.R/FFB.R/FFB.R_end
+    m_Weight: 1
+  - m_Path: AnimalArmature/IKFrontLeg.L
+    m_Weight: 1
+  - m_Path: AnimalArmature/IKFrontLeg.L/FF.L
+    m_Weight: 1
+  - m_Path: AnimalArmature/IKFrontLeg.L/FF.L/FF.L_end
+    m_Weight: 1
+  - m_Path: AnimalArmature/IKFrontLeg.R
+    m_Weight: 1
+  - m_Path: AnimalArmature/IKFrontLeg.R/FF.R
+    m_Weight: 1
+  - m_Path: AnimalArmature/IKFrontLeg.R/FF.R/FF.R_end
+    m_Weight: 1
+  - m_Path: Fox
+    m_Weight: 1

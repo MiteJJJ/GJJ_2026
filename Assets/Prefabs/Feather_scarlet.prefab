@@ -4846,6 +4846,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4396141813073355456}
   - component: {fileID: 6606649918433267502}
+  - component: {fileID: 726513397176906636}
   m_Layer: 0
   m_Name: Feather_scarlet
   m_TagString: Feather
@@ -4863,8 +4864,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1017948502946237094}
   - {fileID: 6120284689597479448}
@@ -4895,6 +4896,21 @@ CapsuleCollider:
   m_Height: 9.093036
   m_Direction: 1
   m_Center: {x: 0, y: 4.046518, z: -0.014790893}
+--- !u!114 &726513397176906636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4314632726369200502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea2fec3cef483334db0855752b9c04e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  playFoxAnimation: {fileID: 0}
+  foxHeadCollider: {fileID: 0}
+  mask: {fileID: 0}
 --- !u!1 &5995274717656344577
 GameObject:
   m_ObjectHideFlags: 0
@@ -5003,7 +5019,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
