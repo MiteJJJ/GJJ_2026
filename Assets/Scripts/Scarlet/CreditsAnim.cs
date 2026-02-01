@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class CreditsScroll : MonoBehaviour
+public class CreditsAnim : MonoBehaviour
 {
     [SerializeField] private float startY = 0f;
-    [SerializeField] private float endY = 2000f;
+    [SerializeField] private float endY = 3000f;
     [SerializeField] private float duration = 30f;
 
     private RectTransform rectTransform;

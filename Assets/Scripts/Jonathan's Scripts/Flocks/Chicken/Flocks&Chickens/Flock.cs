@@ -55,6 +55,8 @@ public class Flock: MonoBehaviour
     int layerIndex;
     int layerMask;
 
+    public AudioManager audioManager;
+
     private void Awake()
     {
         squareNeighborRadius = neighborRadius * neighborRadius;
@@ -125,6 +127,7 @@ public class Flock: MonoBehaviour
         Vector3 spawnPos = chosenChicken.transform.position;
         spawnPos.y = chosenChicken.transform.position.y;
         Instantiate(eggPrefab, spawnPos, Quaternion.identity);
+        audioManager.PlayEggSpawn();
     }
 
     void TrySpawnFeather()
@@ -137,6 +140,7 @@ public class Flock: MonoBehaviour
         FlockAgent chosenChicken = agents[Random.Range(0, agents.Count)];
         Vector3 spawnPos = chosenChicken.transform.position;
         Instantiate(featherPrefab, spawnPos, Quaternion.identity);
+        audioManager.PlayFeatherSpawn();
     }
 
     void FixedUpdate()
