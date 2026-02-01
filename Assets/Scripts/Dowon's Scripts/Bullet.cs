@@ -1,28 +1,31 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Bullet : MonoBehaviour
 {
-    [Header("Bullet Settings")]
-    public float speed = 20f;       // units per second
-    public float lifetime = 10f;     // seconds before self-destruction
+    public float speed = 30f;
+    public float lifetime = 5f;
 
-    private void Start()
+    private Rigidbody rb;
+
+    void Awake()
     {
-        // Automatically destroy the bullet after lifetime seconds
+        rb = GetComponent<Rigidbody>();
+    }
+
+    void Start()
+    {
+        rb.linearVelocity = transform.forward * speed;
         Destroy(gameObject, lifetime);
     }
 
-    private void FixedUpdate()
+    private void OnCollisionEnter(Collision collision)
     {
-        // Move forward in the direction the bullet is facing
-        transform.position += transform.forward * speed * Time.deltaTime;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Fox"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            // damage player here
         }
+
+        Destroy(gameObject);
     }
 }
