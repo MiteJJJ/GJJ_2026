@@ -14,6 +14,7 @@ public class Timer : MonoBehaviour
 
     [Header("UI")]
     public TMP_Text timeDisplay = null;
+    public TMP_Text gameEndText = null;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,6 +34,8 @@ public class Timer : MonoBehaviour
         {
             Debug.LogWarning("Timer is missing restartButton or timeDisplay reference");
         }
+
+        gameEndText.text = "GAME OVER";
     }
 
     // Update is called once per frame
@@ -54,6 +57,8 @@ public class Timer : MonoBehaviour
             {
                 Debug.LogWarning("Timer is missing restartButton or timeDisplay reference");
             }
+
+            gameEndText.text = "VICTORY";
         }
 
         if (timeDisplay != null)
