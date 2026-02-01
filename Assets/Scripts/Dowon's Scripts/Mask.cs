@@ -7,24 +7,32 @@ using UnityEngine.InputSystem;
 public class Mask : MonoBehaviour
 {
     [Header("Mask Settings")]
-    public float maskDuration = 5f;
+    public float timePerFeather = 8f;
 
     [SerializeField]
-    private int featherCount = 0;
+    private int featherCount = 3;
     [SerializeField]
-    private int feathersNeeded = 3;
+    private int featherMax = 3;
+
     private Coroutine maskRoutine;
 
     [Header("UI")]
     public TMP_Text featherCountText = null;
-        
+
+    float maskTime = 0f;
+
+    public void Start()
+    {
+        UpdateFeatherUI();
+    }
+
     public void OnUseMask()
     {
         if (Fox.Masked)
         {
             ExitMaskedState();
         }
-        else if (featherCount >= feathersNeeded)
+        else if (featherCount >= 0)
         {
             EnterMaskedState();
         }
@@ -34,34 +42,44 @@ public class Mask : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (Fox.Masked)
+        {
+            maskTime -= Time.deltaTime;
+            maskTime = Mathf.Max(maskTime, 0f);
+            UpdateFeatherUI();
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Feather"))
         {
-            featherCount++;
-            featherCount = Math.Min(featherCount, feathersNeeded);
-            Destroy(other.gameObject);
+            // ignore if full
+            if (featherCount == featherMax)
+            {
+                return;
+            }
 
-            if (featherCountText)
-            {
-                featherCountText.text = "Feathers: " + featherCount + " / " + feathersNeeded;
-            }
-            else
-            {
-                Debug.LogWarning("Set up reference to Feather Count UI");
-            }
+            featherCount++;
+            featherCount = Math.Min(featherCount, featherMax);
+            Destroy(other.gameObject);
+            UpdateFeatherUI();
         }
     }
 
     private void EnterMaskedState()
     {
-        featherCount = 0;
         Fox.Masked = true;
 
         if (maskRoutine != null)
             StopCoroutine(maskRoutine);
 
         maskRoutine = StartCoroutine(MaskTimer());
+        maskTime = featherCount * timePerFeather;
+
+        featherCount = 0;
 
         Debug.Log("Entered masked state");
     }
@@ -75,13 +93,36 @@ public class Mask : MonoBehaviour
         }
 
         Fox.Masked = false;
+        maskTime = 0f;  
+        featherCount = 0;
+        UpdateFeatherUI();
 
         Debug.Log("Exited masked state");
     }
 
+    private void UpdateFeatherUI()
+    {
+        if (!featherCountText)
+        {
+            Debug.LogWarning("Set up reference to Feather Count UI");
+            return;
+        }
+
+        if (Fox.Masked)
+        {
+            featherCountText.text =
+                $"Masked: {maskTime:0.0}s";
+        }
+        else
+        {
+            featherCountText.text =
+                $"Feathers: {featherCount} / {featherMax}";
+        }
+    }
+
     private IEnumerator MaskTimer()
     {
-        yield return new WaitForSeconds(maskDuration);
+        yield return new WaitForSeconds(timePerFeather * featherCount);
         ExitMaskedState();
     }
 }

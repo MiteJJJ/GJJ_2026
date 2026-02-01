@@ -110,9 +110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83f89f74c933d6d4aa0acd43784ea12a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Mask
-  maskDuration: 5
-  featherCount: 0
-  feathersNeeded: 3
+  timePerFeather: 8
+  featherCount: 3
+  featherMax: 3
   featherCountText: {fileID: 0}
 --- !u!114 &3520377606072069454
 MonoBehaviour:

@@ -11,27 +11,35 @@ public class Hunter : MonoBehaviour
     GameObject incomingAttackPF;
 
     [Header("Spawn Settings")]
-    public float spawnInterval = 2f;  // Time between spawns in seconds
+    public float spawnInterval = 2f;
     public float spawnIntervalDecrease = 0.1f;
     public float spawnIntervalMin = 0.2f;
     public float radius = 500f;
 
+    private Coroutine spawnRoutine;
+
     void Start()
     {
-        StartSpawning();
-    }
-
-    public void StartSpawning()
-    {
-        StartCoroutine(SpawnLoop());
+        spawnRoutine = StartCoroutine(SpawnLoop());
     }
 
     private IEnumerator SpawnLoop()
     {
         while (true)
         {
+            // 🔒 Pause here while masked
+            yield return new WaitUntil(() => !Fox.Masked);
+
+            // Spawn
             SpawnAtRandomCirclePoint();
-            yield return new WaitForSeconds(Math.Max(spawnInterval - spawnIntervalDecrease, spawnIntervalMin));
+
+            // Wait for interval (unchanged by masking)
+            float waitTime = Math.Max(
+                spawnInterval - spawnIntervalDecrease,
+                spawnIntervalMin
+            );
+
+            yield return new WaitForSeconds(waitTime);
         }
     }
 
@@ -43,26 +51,20 @@ public class Hunter : MonoBehaviour
             return;
         }
 
-        // Choose a random angle
         float angle = UnityEngine.Random.Range(0f, 360f) * Mathf.Deg2Rad;
 
-        // Convert polar coordinates to Cartesian coordinates
         Vector3 spawnPos = new Vector3(
             transform.position.x + radius * Mathf.Cos(angle),
             3.5f,
             transform.position.z + radius * Mathf.Sin(angle)
         );
 
-        // Spawn the prefab at the random position
         GameObject go = Instantiate(incomingAttackPF, spawnPos, Quaternion.identity);
+
         IncomingAttack atk = go.GetComponent<IncomingAttack>();
         atk.fox = fox;
+
         LineRenderer line = go.GetComponent<LineRenderer>();
         line.SetPosition(0, spawnPos);
-    }
-
-    void Update()
-    {
-        
     }
 }

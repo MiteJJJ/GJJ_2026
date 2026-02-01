@@ -23,6 +23,11 @@ public class IncomingAttack : MonoBehaviour
     {
         // follow fox posiiton
         lineRenderer.SetPosition(1, fox.transform.position + Vector3.up * 5.0f);
+
+        if (Fox.Masked)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void SpawnAfterDelay()
