@@ -52,6 +52,7 @@ public class Mask : MonoBehaviour
         }
     }
 
+    //pickup mask
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Feather"))

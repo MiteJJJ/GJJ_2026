@@ -16,12 +16,14 @@ public class Fox : MonoBehaviour
     public int currentEggs = 1;
     public int maxEggs = 3;
 
+    PlayFoxAnimation playFoxAnimationl;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         mask = GetComponent<Mask>();
         UpdateEggsUI();
+        playFoxAnimationl = GetComponent<PlayFoxAnimation>();
     }
 
     // Update is called once per frame
@@ -30,6 +32,7 @@ public class Fox : MonoBehaviour
         
     }
 
+    //PickUpEggs;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Egg"))
@@ -40,6 +43,8 @@ public class Fox : MonoBehaviour
             }
 
             Debug.Log("Picked up egg");
+            //do the pickup animation
+            playFoxAnimationl.StartPicking();
             currentEggs += 1;
             Destroy(other.gameObject);
         }

@@ -76,8 +76,8 @@ public class PlayFoxAnimation : MonoBehaviour
     }
 
     // Public method to trigger eating (call from other scripts)
-    public void StartEating()
+    public void StartPicking()
     {
-        animator.SetTrigger("Pick");  // Assuming this triggers eating
+        animator.SetBool("Pick", true);  // Assuming this triggers eating
     }
 }
