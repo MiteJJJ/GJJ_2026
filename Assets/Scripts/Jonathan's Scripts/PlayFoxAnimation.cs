@@ -57,10 +57,6 @@ public class PlayFoxAnimation : MonoBehaviour
         {
             return rb.linearVelocity.magnitude > movementThreshold;
         }
-        // If using CharacterController:
-        // CharacterController cc = GetComponent<CharacterController>();
-        // return cc.velocity.magnitude > movementThreshold;
-
         return false;
     }
 
