@@ -1233,6 +1233,10 @@ PrefabInstance:
       propertyPath: featherCountText
       value: 
       objectReference: {fileID: 1424484502}
+    - target: {fileID: 7843808268413544541, guid: 58b77b409b5dcb344a9972e7e66a0b5d, type: 3}
+      propertyPath: idle1Probability
+      value: 0.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
