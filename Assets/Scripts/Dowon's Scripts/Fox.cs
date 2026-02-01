@@ -14,6 +14,7 @@ public class Fox : MonoBehaviour
     PlayFoxAnimation playFoxAnimation;
 
     public Collider headCollider;
+    public ParticleSystem depositParticle;
 
     void Start()
     {
@@ -53,6 +54,14 @@ public class Fox : MonoBehaviour
         if (other.CompareTag("House"))
         {
             Debug.Log("Reached house");
+
+            // only play particle and deposit if carrying eggs
+            if (updateEggs.GetCurrentEggs() > 0 && depositParticle != null)
+            {
+                Vector3 contactPoint = other.ClosestPoint(transform.position);
+                depositParticle.transform.position = contactPoint;
+                depositParticle.Play();
+            }
 
             // recharge feathers
             mask.RefillFeathers();
