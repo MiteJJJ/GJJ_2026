@@ -15,6 +15,7 @@ public class Fox : MonoBehaviour
 
     public Collider headCollider;
     public ParticleSystem depositParticle;
+    public AudioManager audioManager;
 
     void Start()
     {
@@ -61,6 +62,7 @@ public class Fox : MonoBehaviour
                 Vector3 contactPoint = other.ClosestPoint(transform.position);
                 depositParticle.transform.position = contactPoint;
                 depositParticle.Play();
+                audioManager.PlayHome();
             }
 
             // recharge feathers

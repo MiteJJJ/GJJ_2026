@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource EggSpawn;
     public AudioSource FeatherCollect;
     public AudioSource EggCollect;
+    public AudioSource Home;
+    public AudioSource GunFire;
 
     private void Start()
     {
@@ -32,5 +34,14 @@ public class AudioManager : MonoBehaviour
     public void PlayEggCollect()
     {
         if (EggCollect != null) EggCollect.Play();
+    }
+
+    public void PlayHome() {
+        if (Home != null) Home.Play();
+    }
+
+    public void PlayGun()
+    {
+        if (GunFire != null) GunFire.Play();
     }
 }

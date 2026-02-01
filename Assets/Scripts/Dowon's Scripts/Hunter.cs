@@ -17,6 +17,7 @@ public class Hunter : MonoBehaviour
     public float radius = 500f;
 
     private Coroutine spawnRoutine;
+    //public AudioManager audioManager;
 
     void Start()
     {

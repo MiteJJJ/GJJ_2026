@@ -10,6 +10,7 @@ public class IncomingAttack : MonoBehaviour
     public GameObject bulletPrefab;
 
     public float aimTime = 3.0f;
+    public AudioManager audioManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -47,6 +48,7 @@ public class IncomingAttack : MonoBehaviour
             Quaternion spawnRot = Quaternion.LookRotation(direction.normalized);
 
             Instantiate(bulletPrefab, spawnPoint, spawnRot);
+            audioManager.PlayGun();
         }
         else
         {
