@@ -21,6 +21,21 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        Rigidbody otherRb = collision.rigidbody;
+
+        if (otherRb != null)
+        {
+            // Direction from bullet to the other object's center of mass
+            Vector3 direction = (otherRb.worldCenterOfMass - transform.position).normalized;
+
+            float force = 1f;
+            otherRb.AddForceAtPosition(
+                direction * force,
+                otherRb.worldCenterOfMass,
+                ForceMode.Impulse
+            );
+        }
+
         Destroy(gameObject);
     }
 }
