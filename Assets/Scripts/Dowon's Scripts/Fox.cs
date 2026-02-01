@@ -27,6 +27,12 @@ public class Fox : MonoBehaviour
         {
             Debug.Log("Reached foxhole");
         }
+
+        if (other.CompareTag("Bullet"))
+        {
+            Die();
+            Destroy(other.gameObject);
+        }
     }
 
     public void Die()

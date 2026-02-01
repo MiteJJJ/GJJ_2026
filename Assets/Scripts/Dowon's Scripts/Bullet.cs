@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, lifetime);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         // Move forward in the direction the bullet is facing
         transform.position += transform.forward * speed * Time.deltaTime;
@@ -20,5 +20,6 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Destroy(gameObject);
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Hunter : MonoBehaviour
@@ -9,14 +10,53 @@ public class Hunter : MonoBehaviour
     GameObject incomingAttackPF;
 
     [Header("Spawn Settings")]
-    public float spawnRadius = 5f;    // Radius of the circle
     public float spawnInterval = 2f;  // Time between spawns in seconds
     public int count = 1;
-    public float radius = 1000f;
+    public float radius = 500f;
 
     void Start()
     {
-        
+        StartSpawning();
+    }
+
+    public void StartSpawning()
+    {
+        StartCoroutine(SpawnLoop());
+    }
+
+    private IEnumerator SpawnLoop()
+    {
+        while (true)
+        {
+            SpawnAtRandomCirclePoint();
+            yield return new WaitForSeconds(spawnInterval);
+        }
+    }
+
+    private void SpawnAtRandomCirclePoint()
+    {
+        if (incomingAttackPF == null)
+        {
+            Debug.LogWarning("No prefab assigned to spawn!");
+            return;
+        }
+
+        // Choose a random angle
+        float angle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
+
+        // Convert polar coordinates to Cartesian coordinates
+        Vector3 spawnPos = new Vector3(
+            transform.position.x + radius * Mathf.Cos(angle),
+            transform.position.y,
+            transform.position.z + radius * Mathf.Sin(angle)
+        );
+
+        // Spawn the prefab at the random position
+        GameObject go = Instantiate(incomingAttackPF, spawnPos, Quaternion.identity);
+        IncomingAttack atk = go.GetComponent<IncomingAttack>();
+        atk.fox = fox;
+        LineRenderer line = go.GetComponent<LineRenderer>();
+        line.SetPosition(0, spawnPos);
     }
 
     void Update()

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class IncomingAttack : MonoBehaviour
 {
-    public GameObject foxTr;
+    public GameObject fox = null;
     LineRenderer lineRenderer;
 
     [SerializeField]
@@ -22,7 +22,7 @@ public class IncomingAttack : MonoBehaviour
     void Update()
     {
         // follow fox posiiton
-        lineRenderer.SetPosition(1, foxTr.transform.position + Vector3.up * 5.0f);
+        lineRenderer.SetPosition(1, fox.transform.position + Vector3.up * 5.0f);
     }
 
     public void SpawnAfterDelay()

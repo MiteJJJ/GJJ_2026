@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4865252433485361459}
+  - component: {fileID: 5619472136572271219}
   m_Layer: 0
   m_Name: Hunter
   m_TagString: Untagged
@@ -31,3 +32,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5619472136572271219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214181291840883588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81dc0cb0c7225ae4fba2969462dc5100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Hunter
+  fox: {fileID: 0}
+  incomingAttackPF: {fileID: 2828663506816525770, guid: fba8774d03ff0ee4ab4d31af8a150104, type: 3}
+  spawnInterval: 2
+  count: 1
+  radius: 50
