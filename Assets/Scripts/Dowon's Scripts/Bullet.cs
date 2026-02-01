@@ -34,6 +34,8 @@ public class Bullet : MonoBehaviour
                 otherRb.worldCenterOfMass,
                 ForceMode.Impulse
             );
+
+            otherRb.GetComponent<Fox>().Die();
         }
 
         Destroy(gameObject);
