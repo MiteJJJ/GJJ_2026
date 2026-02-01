@@ -10,6 +10,7 @@ TagManager:
   - Foxhole
   - Bullet
   - Fox
+  - Floor
   layers:
   - Default
   - TransparentFX
