@@ -15,4 +15,22 @@ public class Fox : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Egg"))
+        {
+            Debug.Log("Picked up egg");
+        }
+
+        if (other.CompareTag("Foxhole"))
+        {
+            Debug.Log("Reached foxhole");
+        }
+    }
+
+    public void Die()
+    {
+        Debug.Log("Fox dies");
+    }
 }
