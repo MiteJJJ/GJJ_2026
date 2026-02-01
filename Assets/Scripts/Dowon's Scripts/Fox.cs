@@ -7,10 +7,12 @@ public class Fox : MonoBehaviour
 
     public GameObject restartButton;
 
+    public Mask mask;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        mask = GetComponent<Mask>();
     }
 
     // Update is called once per frame
@@ -29,6 +31,9 @@ public class Fox : MonoBehaviour
         if (other.CompareTag("Foxhole"))
         {
             Debug.Log("Reached foxhole");
+
+            // recharge feathers
+            mask.RefillFeathers();
         }
 
         if (other.CompareTag("Bullet"))

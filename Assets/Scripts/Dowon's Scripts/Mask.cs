@@ -69,6 +69,12 @@ public class Mask : MonoBehaviour
         }
     }
 
+    public void RefillFeathers()
+    {
+        featherCount = featherMax;
+        UpdateFeatherUI();
+    }
+
     private void EnterMaskedState()
     {
         Fox.Masked = true;
