@@ -27,6 +27,7 @@ Material:
   m_ValidKeywords:
   - N_F_DDMD_ON
   - N_F_EAL_ON
+  - N_F_O_ON
   - N_F_SS_ON
   - N_F_TRANSAFFSHA_ON
   m_InvalidKeywords:
@@ -61,7 +62,6 @@ Material:
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
-  - SRPDEFAULTUNLIT
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -259,7 +259,7 @@ Material:
     - _N_F_NFD: 0
     - _N_F_NLASOBF: 0
     - _N_F_NM: 0
-    - _N_F_O: 0
+    - _N_F_O: 1
     - _N_F_OFLMB: 0
     - _N_F_PA: 0
     - _N_F_PT: 0
@@ -283,7 +283,7 @@ Material:
     - _Opacity: 1
     - _Oper: 0
     - _OutlineExtrudeMethod: 0
-    - _OutlineWidth: 0
+    - _OutlineWidth: 2
     - _OutlineWidthAffectedByViewDistance: 0
     - _OutlineZPostionInCamera: 0
     - _OverallShadowColorPower: 1
@@ -367,9 +367,9 @@ Material:
     - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
     - _MainColor: {r: 1, g: 0.8551639, b: 0.60691816, a: 1}
     - _ObjPosi: {r: 0, g: 0, b: 0, a: 0}
-    - _OutlineColor: {r: 0.72641504, g: 1, b: 0.7413251, a: 1}
+    - _OutlineColor: {r: 0.61635214, g: 0.119135, b: 0, a: 1}
     - _OutlineOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _OverallShadowColor: {r: 0.30817598, g: 0.1465165, b: 0.101756185, a: 1}
+    - _OverallShadowColor: {r: 0.7610062, g: 0.26983342, b: 0.14119293, a: 1}
     - _PTCol: {r: 0, g: 0, b: 0, a: 1}
     - _PrevPosition: {r: 0, g: 0, b: 0, a: 0}
     - _RimLightColor: {r: 1, g: 1, b: 1, a: 1}

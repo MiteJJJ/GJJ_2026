@@ -286,14 +286,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 94479791}
     m_Modifications:
-    - target: {fileID: 4246277422454498386, guid: 49a95fd4fbd6ae344a4148affc8b10bf, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4246277422454498386, guid: 49a95fd4fbd6ae344a4148affc8b10bf, type: 3}
-      propertyPath: m_RayTracingMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5870367141061853332, guid: 49a95fd4fbd6ae344a4148affc8b10bf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.743081
@@ -613,7 +605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &1177266040
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -981,6 +973,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1947516270733790236, guid: 505abbdd3f284b0499a00bd937bdb0be, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 439
+      objectReference: {fileID: 0}
     - target: {fileID: 2817099873521802118, guid: 505abbdd3f284b0499a00bd937bdb0be, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 126
@@ -991,7 +987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3940519508011289326, guid: 505abbdd3f284b0499a00bd937bdb0be, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3940519508011289326, guid: 505abbdd3f284b0499a00bd937bdb0be, type: 3}
       propertyPath: m_LocalPosition.z

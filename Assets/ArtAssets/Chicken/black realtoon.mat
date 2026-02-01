@@ -27,10 +27,8 @@ Material:
   m_ValidKeywords:
   - N_F_DDMD_ON
   - N_F_EAL_ON
-  - N_F_O_ON
   - N_F_RDC_ON
   - N_F_RELGI_ON
-  - N_F_SS_ON
   - N_F_TRANSAFFSHA_ON
   m_InvalidKeywords:
   - N_F_TRANSAFFSHA
@@ -64,6 +62,7 @@ Material:
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
+  - SRPDEFAULTUNLIT
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -261,7 +260,7 @@ Material:
     - _N_F_NFD: 0
     - _N_F_NLASOBF: 0
     - _N_F_NM: 0
-    - _N_F_O: 1
+    - _N_F_O: 0
     - _N_F_OFLMB: 0
     - _N_F_PA: 0
     - _N_F_PT: 0
@@ -273,7 +272,7 @@ Material:
     - _N_F_SE: 0
     - _N_F_SL: 0
     - _N_F_SON: 0
-    - _N_F_SS: 1
+    - _N_F_SS: 0
     - _N_F_ST: 0
     - _N_F_STIAL: 0
     - _N_F_STIS: 0
