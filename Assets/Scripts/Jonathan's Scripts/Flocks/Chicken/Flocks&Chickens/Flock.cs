@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Flock: MonoBehaviour
 {
@@ -27,8 +28,20 @@ public class Flock: MonoBehaviour
     public float SquareAvoidanceRadius { get { return squareAvoidanceRadius; } }
 
     // Variables used to avoid from
-    public Transform egg;
-    public Transform fur;
+    public GameObject eggPrefab;
+    public GameObject featherPrefab;
+
+    [Header("Egg Spawning")]
+    public float eggSpawnInterval = 10f;
+    public int maxEggs = 3;
+    float eggSpawnTimer;
+    public static int currentEggs;
+
+    [Header("Feather Spawning")]
+    public float featherSpawnInterval = 10f;
+    public int maxFeathers = 3;
+    float featherSpawnTimer;
+    public static int currentFeathers;
 
     // this is public because this will be referenced in the StayinRadiusBehavior script as the center of the fishflock
     public Vector3 fishSpawnPoint;
@@ -82,6 +95,48 @@ public class Flock: MonoBehaviour
 
         layerIndex = LayerMask.NameToLayer("Animal");
         layerMask = 1 << layerIndex;
+    }
+
+    void Update()
+    {
+        eggSpawnTimer += Time.deltaTime;
+        if (eggSpawnTimer >= eggSpawnInterval)
+        {
+            eggSpawnTimer = 0f;
+            TrySpawnEgg();
+        }
+
+        featherSpawnTimer += Time.deltaTime;
+        if (featherSpawnTimer >= featherSpawnInterval)
+        {
+            featherSpawnTimer = 0f;
+            TrySpawnFeather();
+        }
+    }
+
+    void TrySpawnEgg()
+    {
+        if (eggPrefab == null || agents.Count == 0) return;
+
+        currentEggs = GameObject.FindGameObjectsWithTag("Egg").Length;
+        if (currentEggs >= maxEggs) return;
+
+        FlockAgent chosenChicken = agents[Random.Range(0, agents.Count)];
+        Vector3 spawnPos = chosenChicken.transform.position;
+        spawnPos.y = chosenChicken.transform.position.y;
+        Instantiate(eggPrefab, spawnPos, Quaternion.identity);
+    }
+
+    void TrySpawnFeather()
+    {
+        if (featherPrefab == null || agents.Count == 0) return;
+
+        currentFeathers = GameObject.FindGameObjectsWithTag("Feather").Length;
+        if (currentFeathers >= maxFeathers) return;
+
+        FlockAgent chosenChicken = agents[Random.Range(0, agents.Count)];
+        Vector3 spawnPos = chosenChicken.transform.position;
+        Instantiate(featherPrefab, spawnPos, Quaternion.identity);
     }
 
     void FixedUpdate()
