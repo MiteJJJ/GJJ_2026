@@ -46,7 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Hunter
   fox: {fileID: 0}
   incomingAttackPF: {fileID: 2828663506816525770, guid: fba8774d03ff0ee4ab4d31af8a150104, type: 3}
-  spawnInterval: 2
+  spawnInterval: 5
   spawnIntervalDecrease: 0.1
   spawnIntervalMin: 0.2
   radius: 50
+  audioManager: {fileID: 0}

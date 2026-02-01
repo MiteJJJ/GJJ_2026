@@ -12,15 +12,19 @@ public class Hunter : MonoBehaviour
 
     [Header("Spawn Settings")]
     public float spawnInterval = 2f;
+    public float spawnIntervalInit = 5f;
     public float spawnIntervalDecrease = 0.1f;
-    public float spawnIntervalMin = 0.2f;
+    public float spawnIntervalMin = 0.5f;
     public float radius = 500f;
+
+    bool wasMasked = false;
 
     private Coroutine spawnRoutine;
     public AudioManager audioManager;
 
     void Start()
     {
+        spawnInterval = spawnIntervalInit;
         spawnRoutine = StartCoroutine(SpawnLoop());
     }
 
@@ -31,16 +35,25 @@ public class Hunter : MonoBehaviour
             // 🔒 Pause here while masked
             yield return new WaitUntil(() => !Fox.Masked);
 
+            if (wasMasked)
+            {
+                spawnInterval = spawnIntervalInit;
+                wasMasked = false;
+            }
+
             // Spawn
             SpawnAtRandomCirclePoint();
 
-            // Wait for interval (unchanged by masking)
-            float waitTime = Math.Max(
-                spawnInterval - spawnIntervalDecrease,
-                spawnIntervalMin
-            );
+            spawnInterval -= spawnIntervalDecrease;
+            spawnInterval = Mathf.Max(spawnInterval, spawnIntervalMin);
 
-            yield return new WaitForSeconds(waitTime);
+            yield return new WaitForSeconds(spawnInterval);
+
+            // Detect masking after the wait
+            if (Fox.Masked)
+            {
+                wasMasked = true;
+            }
         }
     }
 
