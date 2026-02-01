@@ -17,7 +17,7 @@ public class Hunter : MonoBehaviour
     public float radius = 500f;
 
     private Coroutine spawnRoutine;
-    //public AudioManager audioManager;
+    public AudioManager audioManager;
 
     void Start()
     {
@@ -64,6 +64,7 @@ public class Hunter : MonoBehaviour
 
         IncomingAttack atk = go.GetComponent<IncomingAttack>();
         atk.fox = fox;
+        atk.audioManager = audioManager;
 
         LineRenderer line = go.GetComponent<LineRenderer>();
         line.SetPosition(0, spawnPos);

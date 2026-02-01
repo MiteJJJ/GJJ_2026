@@ -48,7 +48,7 @@ MonoBehaviour:
   fox: {fileID: 0}
   bulletPrefab: {fileID: 6091969285050723862, guid: a9825e7e25fbb914fba73ad746148d1d, type: 3}
   aimTime: 1
-  audioManager: {fileID: 6867196149728669235, guid: 3bf56de7cebd975479e8afea000faaa9, type: 3}
+  audioManager: {fileID: 0}
 --- !u!120 &5965037025557074383
 LineRenderer:
   serializedVersion: 3
