@@ -63,6 +63,7 @@ public class Mask : MonoBehaviour
                 return;
             }
 
+            Debug.Log("Picked up feather");
             featherCount++;
             featherCount = Math.Min(featherCount, featherMax);
             Destroy(other.gameObject);

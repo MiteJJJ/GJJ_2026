@@ -66,7 +66,7 @@ public class PlayFoxAnimation : MonoBehaviour
         bool useIdle1 = Random.value <= idle1Probability;
         animator.SetBool("IsIdle_1", useIdle1);
 
-        Debug.Log($"Set idle to: {(useIdle1 ? "Idle_1" : "Idle_2")}");
+        //Debug.Log($"Set idle to: {(useIdle1 ? "Idle_1" : "Idle_2")}");
     }
 
     // Public method to trigger death (call from other scripts)
@@ -78,6 +78,7 @@ public class PlayFoxAnimation : MonoBehaviour
     // Public method to trigger eating (call from other scripts)
     public void StartPicking()
     {
-        animator.SetBool("Pick", true);  // Assuming this triggers eating
+        animator.SetTrigger("IsPicking");  // Assuming this triggers eating
+        Debug.Log("Pick");
     }
 }

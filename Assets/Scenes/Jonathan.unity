@@ -487,7 +487,7 @@ MonoBehaviour:
   eggPrefab: {fileID: 2721947343456886812, guid: e7f4053901f48de4ba0bceb31773478e, type: 3}
   featherPrefab: {fileID: 4314632726369200502, guid: 823e7108f8663924991b1dce10503489, type: 3}
   eggSpawnInterval: 1
-  maxEggs: 3
+  maxEggs: 10
   featherSpawnInterval: 1
   maxFeathers: 5
   fishSpawnPoint: {x: 0, y: 0, z: 0}
