@@ -78,6 +78,6 @@ public class PlayFoxAnimation : MonoBehaviour
     // Public method to trigger eating (call from other scripts)
     public void StartEating()
     {
-        animator.SetTrigger("PickFeather");  // Assuming this triggers eating
+        animator.SetTrigger("Pick");  // Assuming this triggers eating
     }
 }

@@ -479,7 +479,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.5944145, y: 2.2770452, z: 0.84903455}
+  m_Size: {x: 3.5944145, y: 2.66, z: 0.84903455}
   m_Center: {x: 0, y: 1.35, z: 0}
 --- !u!54 &8586367835041166042
 Rigidbody:
@@ -597,5 +597,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   movementThreshold: 0.1
-  idleCheckInterval: 2
+  idleCheckInterval: 3.333
   idle1Probability: 0.8
