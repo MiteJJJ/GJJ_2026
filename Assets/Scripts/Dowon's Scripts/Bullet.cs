@@ -19,13 +19,8 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, lifetime);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            // damage player here
-        }
-
         Destroy(gameObject);
     }
 }

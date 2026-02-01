@@ -49,7 +49,7 @@ public class Hunter : MonoBehaviour
         // Convert polar coordinates to Cartesian coordinates
         Vector3 spawnPos = new Vector3(
             transform.position.x + radius * Mathf.Cos(angle),
-            transform.position.y,
+            3.5f,
             transform.position.z + radius * Mathf.Sin(angle)
         );
 
