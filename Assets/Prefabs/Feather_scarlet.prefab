@@ -4847,7 +4847,7 @@ GameObject:
   - component: {fileID: 4396141813073355456}
   m_Layer: 0
   m_Name: Feather_scarlet
-  m_TagString: Untagged
+  m_TagString: Feather
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9897,6 +9897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1536a7424c5d6fa479bb4e878c946203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapFloatingFeather
+  initialZRotation: 40
   floatDistance: 0.5
   floatSpeed: 2
   rotateSpeed: 100

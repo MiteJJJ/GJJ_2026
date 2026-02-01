@@ -483,7 +483,7 @@ MonoBehaviour:
   startingCount: 200
   borderLength: 70
   neighborRadius: 4
-  avoidanceRadiusMultiplier: 0.95
+  avoidanceRadiusMultiplier: 0.9
   eggPrefab: {fileID: 2721947343456886812, guid: e7f4053901f48de4ba0bceb31773478e, type: 3}
   featherPrefab: {fileID: 4314632726369200502, guid: 823e7108f8663924991b1dce10503489, type: 3}
   eggSpawnInterval: 10
@@ -491,7 +491,7 @@ MonoBehaviour:
   featherSpawnInterval: 5
   maxFeathers: 5
   fishSpawnPoint: {x: 0, y: 0, z: 0}
-  player: {fileID: 0}
+  player: {fileID: 1430958938}
 --- !u!4 &473204980
 Transform:
   m_ObjectHideFlags: 0
@@ -953,6 +953,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3713804a29244418bbe0c46144f913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fox
+--- !u!4 &1430958938 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3327391074011265664, guid: 58b77b409b5dcb344a9972e7e66a0b5d, type: 3}
+  m_PrefabInstance: {fileID: 2026990877}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1499047601 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7770738339093317198, guid: 8818fb882b1269641adb85a1d42e03d4, type: 3}
