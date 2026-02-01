@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,11 +7,13 @@ public class Fox : MonoBehaviour
     public static bool Masked = false;
 
     public GameObject restartButton;
+    public TMP_Text currentEggText;
+    public TMP_Text totalEggText;
 
-    public Mask mask;
+    Mask mask;
 
     public int totalEggs = 0;
-    public int currentEggs = 0;
+    public int currentEggs = 1;
     public int maxEggs = 3;
 
 
@@ -18,6 +21,7 @@ public class Fox : MonoBehaviour
     void Start()
     {
         mask = GetComponent<Mask>();
+        UpdateEggsUI();
     }
 
     // Update is called once per frame
@@ -46,12 +50,36 @@ public class Fox : MonoBehaviour
 
             // recharge feathers
             mask.RefillFeathers();
+
+            // move current eggs to total
+            totalEggs += currentEggs;
+            currentEggs = 0;
+
+            UpdateEggsUI();
         }
 
         if (other.CompareTag("Bullet"))
         {
             Die();
             Destroy(other.gameObject);
+        }
+    }
+
+    public void UpdateEggsUI()
+    {
+        if (!currentEggText || !totalEggText)
+        {
+            Debug.LogWarning("Set up reference to egg UI");
+            return;
+        }
+
+        if (currentEggText)
+        {
+            currentEggText.text = "Current: " + currentEggs;
+        }
+        if (totalEggText)
+        {
+            totalEggText.text = "Total Eggs: " + totalEggs;
         }
     }
 
