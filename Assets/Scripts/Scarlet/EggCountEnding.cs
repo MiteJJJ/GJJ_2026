@@ -8,8 +8,7 @@ public class EggCountEnding : MonoBehaviour
 
     void Start()
     {
-        //in final version it should get eggcount from "finalgame" scene
-        UpdateEggCount(eggCount);
+        UpdateEggCount(UpdateEggs.FinalScore);
     }
 
     public void UpdateEggCount(int count)

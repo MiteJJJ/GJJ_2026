@@ -4,27 +4,29 @@ public class EggCollisionChecker : MonoBehaviour
 {
     PlayFoxAnimation playFoxAnimation;
     Collider foxHeadCollider;
-    Fox fox;
+    UpdateEggs updateEggs;
 
     void Start()
     {
-        fox = FindAnyObjectByType<Fox>();
+        Fox fox = FindAnyObjectByType<Fox>();
         if (fox != null)
         {
             playFoxAnimation = fox.GetComponent<PlayFoxAnimation>();
             foxHeadCollider = fox.headCollider;
+            updateEggs = fox.GetComponent<UpdateEggs>();
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (fox == null) return;
+        if (updateEggs == null) return;
 
         if (other == foxHeadCollider)
         {
+            if (!updateEggs.CanPickUp()) return;
+
             playFoxAnimation.StartPicking();
-            fox.IncrementEgg();
-            fox.UpdateEggsUI();
+            updateEggs.PickUpEgg();
             Destroy(gameObject);
         }
     }

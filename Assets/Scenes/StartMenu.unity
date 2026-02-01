@@ -10859,6 +10859,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.07
       objectReference: {fileID: 0}
+    - target: {fileID: 1117721523729854861, guid: 823e7108f8663924991b1dce10503489, type: 3}
+      propertyPath: initialZRotation
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1363313624395023654, guid: 823e7108f8663924991b1dce10503489, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -10868,8 +10872,20 @@ PrefabInstance:
       value: Feather_scarlet
       objectReference: {fileID: 0}
     - target: {fileID: 4396141813073355456, guid: 823e7108f8663924991b1dce10503489, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396141813073355456, guid: 823e7108f8663924991b1dce10503489, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396141813073355456, guid: 823e7108f8663924991b1dce10503489, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396141813073355456, guid: 823e7108f8663924991b1dce10503489, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.54
+      value: -26.4
       objectReference: {fileID: 0}
     - target: {fileID: 4396141813073355456, guid: 823e7108f8663924991b1dce10503489, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10877,7 +10893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4396141813073355456, guid: 823e7108f8663924991b1dce10503489, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -35.11
+      value: -35.9
       objectReference: {fileID: 0}
     - target: {fileID: 4396141813073355456, guid: 823e7108f8663924991b1dce10503489, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10947,6 +10963,18 @@ PrefabInstance:
     - target: {fileID: 8546364301650771987, guid: e7f4053901f48de4ba0bceb31773478e, type: 3}
       propertyPath: initialZRotation
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935613092210625773, guid: e7f4053901f48de4ba0bceb31773478e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935613092210625773, guid: e7f4053901f48de4ba0bceb31773478e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935613092210625773, guid: e7f4053901f48de4ba0bceb31773478e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.08
       objectReference: {fileID: 0}
     - target: {fileID: 8935613092210625773, guid: e7f4053901f48de4ba0bceb31773478e, type: 3}
       propertyPath: m_LocalPosition.x

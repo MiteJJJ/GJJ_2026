@@ -9,8 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMenu.unity
     guid: ae8e87fb94ce46b4797a4ae49e3b1a03
   - enabled: 1
-    path: Assets/Scenes/FinalGame.unity
-    guid: aaa80a375c8d95741a1b3c186803bda9
+    path: Assets/Scenes/NewFinalGame.unity
+    guid: 98ff4177432952347bc9d9d9872573a4
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: 86f197b6ad2522c429fabcd8d6029282
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

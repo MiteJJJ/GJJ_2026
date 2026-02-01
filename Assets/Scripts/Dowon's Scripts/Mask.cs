@@ -37,7 +37,7 @@ public class Mask : MonoBehaviour
         {
             ExitMaskedState();
         }
-        else if (featherCount >= 0)
+        else if (featherCount > 0)
         {
             EnterMaskedState();
         }

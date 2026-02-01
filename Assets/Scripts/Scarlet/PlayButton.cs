@@ -14,7 +14,7 @@ public class PlayButton : MonoBehaviour
 
     void LoadFinalGame()
     {
-        SceneManager.LoadScene("FinalGame");
+        SceneManager.LoadScene("NewFinalGame");
         Debug.Log("Started");
     }
 }

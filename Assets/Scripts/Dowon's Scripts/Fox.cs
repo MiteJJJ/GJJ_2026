@@ -7,14 +7,9 @@ public class Fox : MonoBehaviour
     public static bool Masked = false;
 
     public GameObject restartButton;
-    public TMP_Text currentEggText;
-    public TMP_Text totalEggText;
 
     Mask mask;
-
-    public int totalEggs = 0;
-    public int currentEggs = 1;
-    public int maxEggs = 3;
+    UpdateEggs updateEggs;
 
     PlayFoxAnimation playFoxAnimation;
 
@@ -24,7 +19,7 @@ public class Fox : MonoBehaviour
     {
         Masked = false;
         mask = GetComponent<Mask>();
-        UpdateEggsUI();
+        updateEggs = GetComponent<UpdateEggs>();
         playFoxAnimation = GetComponent<PlayFoxAnimation>();
     }
 
@@ -55,18 +50,15 @@ public class Fox : MonoBehaviour
         //    Destroy(other.gameObject);
         //}
 
-        if (other.CompareTag("Foxhole"))
+        if (other.CompareTag("House"))
         {
-            Debug.Log("Reached foxhole");
+            Debug.Log("Reached house");
 
             // recharge feathers
             mask.RefillFeathers();
 
-            // move current eggs to total
-            totalEggs += currentEggs;
-            currentEggs = 0;
-
-            UpdateEggsUI();
+            // deposit carried eggs as score
+            updateEggs.DepositEggs();
         }
 
         if (other.CompareTag("Bullet"))
@@ -76,33 +68,6 @@ public class Fox : MonoBehaviour
         }
     }
 
-    public void IncrementEgg()
-    {
-        if (currentEggs >= maxEggs)
-        {
-            return;
-        }
-        Debug.Log("Picked up Egg");
-        currentEggs += 1;
-    }
-
-    public void UpdateEggsUI()
-    {
-        if (!currentEggText || !totalEggText)
-        {
-            Debug.LogWarning("Set up reference to egg UI");
-            return;
-        }
-
-        if (currentEggText)
-        {
-            currentEggText.text = "Current: " + currentEggs;
-        }
-        if (totalEggText)
-        {
-            totalEggText.text = "Total Eggs: " + totalEggs;
-        }
-    }
 
     public void Die()
     {
