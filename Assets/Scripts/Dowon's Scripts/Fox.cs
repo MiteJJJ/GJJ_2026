@@ -16,14 +16,15 @@ public class Fox : MonoBehaviour
     public int currentEggs = 1;
     public int maxEggs = 3;
 
-    PlayFoxAnimation playFoxAnimationl;
+    PlayFoxAnimation playFoxAnimation;
+    [SerializeField] private Collider pickupCollider;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         mask = GetComponent<Mask>();
         UpdateEggsUI();
-        playFoxAnimationl = GetComponent<PlayFoxAnimation>();
+        playFoxAnimation = GetComponent<PlayFoxAnimation>();
     }
 
     // Update is called once per frame
@@ -32,9 +33,15 @@ public class Fox : MonoBehaviour
         
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collision Entered: " + collision.gameObject.name);
+    }
+
     //PickUpEggs;
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Trigger Entered: " + other.gameObject.name);
         if (other.CompareTag("Egg"))
         {
             if (currentEggs >= maxEggs)
@@ -44,7 +51,7 @@ public class Fox : MonoBehaviour
 
             Debug.Log("Picked up egg");
             //do the pickup animation
-            playFoxAnimationl.StartPicking();
+            playFoxAnimation.StartPicking();
             currentEggs += 1;
             Destroy(other.gameObject);
         }
