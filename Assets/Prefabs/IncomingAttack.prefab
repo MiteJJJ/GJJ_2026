@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   fox: {fileID: 0}
   bulletPrefab: {fileID: 6091969285050723862, guid: a9825e7e25fbb914fba73ad746148d1d, type: 3}
-  aimTime: 3
+  aimTime: 1
 --- !u!120 &5965037025557074383
 LineRenderer:
   serializedVersion: 3

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -11,7 +12,8 @@ public class Hunter : MonoBehaviour
 
     [Header("Spawn Settings")]
     public float spawnInterval = 2f;  // Time between spawns in seconds
-    public int count = 1;
+    public float spawnIntervalDecrease = 0.1f;
+    public float spawnIntervalMin = 0.2f;
     public float radius = 500f;
 
     void Start()
@@ -29,7 +31,7 @@ public class Hunter : MonoBehaviour
         while (true)
         {
             SpawnAtRandomCirclePoint();
-            yield return new WaitForSeconds(spawnInterval);
+            yield return new WaitForSeconds(Math.Max(spawnInterval - spawnIntervalDecrease, spawnIntervalMin));
         }
     }
 
@@ -42,7 +44,7 @@ public class Hunter : MonoBehaviour
         }
 
         // Choose a random angle
-        float angle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
+        float angle = UnityEngine.Random.Range(0f, 360f) * Mathf.Deg2Rad;
 
         // Convert polar coordinates to Cartesian coordinates
         Vector3 spawnPos = new Vector3(

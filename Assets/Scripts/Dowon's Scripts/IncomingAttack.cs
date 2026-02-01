@@ -32,7 +32,7 @@ public class IncomingAttack : MonoBehaviour
 
     private IEnumerator SpawnCoroutine()
     {
-        yield return new WaitForSeconds(3f); // wait 3 seconds
+        yield return new WaitForSeconds(aimTime); // wait 3 seconds
 
         Vector3 spawnPoint = lineRenderer.GetPosition(0);
 
