@@ -4,6 +4,7 @@ using System.Collections;
 public class EggAnim : MonoBehaviour
 {
     [SerializeField] private float initialZRotation = 20f;
+    [SerializeField] private float initialYRotation = 35f;
     [SerializeField] private float gentleShakeAngle = 5f;
     [SerializeField] private float gentleShakeSpeed = 3f;
     [SerializeField] private float bounceHeight = 1.2f;
@@ -16,7 +17,7 @@ public class EggAnim : MonoBehaviour
     void Start()
     {
         startPos = transform.position;
-        startRotation = Quaternion.Euler(0, 0, initialZRotation);
+        startRotation = Quaternion.Euler(0, initialYRotation, initialZRotation);
         transform.rotation = startRotation;
         StartCoroutine(ShakeSequence());
     }
