@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2271647d921d8324f9f0c212417acb7a
+guid: 3b63bb12eb88abb4e834d656d5865a9a
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,33 +7,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: black
-    second: {fileID: 2100000, guid: 95504b74e55df714bab1f311b5213c1b, type: 2}
+      name: Main
+    second: {fileID: 2100000, guid: 0240081a5aa4a7c449381c4c87ce65ce, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: brown.001
-    second: {fileID: 2100000, guid: 8f516282f0ca4194f91e40079ca62ba8, type: 2}
+      name: Stone
+    second: {fileID: 2100000, guid: 05065a1db41c1e647894f2aec4030785, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lightbrown
-    second: {fileID: 2100000, guid: 1b4395ec98602a24bb7e708fef569623, type: 2}
+      name: Walls
+    second: {fileID: 2100000, guid: 5aa7ece8c86f2ee429d472d3192120fc, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: red
-    second: {fileID: 2100000, guid: 37cf60ce3b335f746b91fcdfdcff51cd, type: 2}
+      name: Wood
+    second: {fileID: 2100000, guid: d1e1bc33f9918be4f95d33f2e01c0575, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: white.001
-    second: {fileID: 2100000, guid: b4800da035a179d40a595ab6499d5f7c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: yellow
-    second: {fileID: 2100000, guid: 67970ee6acf6866489e6b70320350add, type: 2}
+      name: Wood_Light
+    second: {fileID: 2100000, guid: a8fa01671a96b7e488ecf4e5738acf39, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
