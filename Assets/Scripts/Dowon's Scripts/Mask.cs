@@ -25,11 +25,16 @@ public class Mask : MonoBehaviour
     public bool maskOn;
     public AudioManager audioManager;
 
+    [Header("Mask Feather Visuals")]
+    public GameObject[] maskFeathers = new GameObject[3];
+
+
     public void Start()
     {
         UpdateFeatherUI();
         chickenMask.SetActive(false);
         maskOn = false;
+        HideAllMaskFeathers();
     }
 
     public void OnUseMask()
@@ -57,6 +62,7 @@ public class Mask : MonoBehaviour
             maskTime -= Time.deltaTime;
             maskTime = Mathf.Max(maskTime, 0f);
             UpdateFeatherUI();
+            UpdateMaskFeatherVisuals();
         }
     }
 
@@ -65,8 +71,8 @@ public class Mask : MonoBehaviour
     {
         if (Fox.Masked)
         {
-            // extend mask duration
-            maskTime += timePerFeather;
+            // extend mask duration, capped at 24s
+            maskTime = Mathf.Min(maskTime + timePerFeather, 24f);
             Debug.Log("Extended mask time by " + timePerFeather + "s");
             UpdateFeatherUI();
             if (audioManager != null)
@@ -130,6 +136,7 @@ public class Mask : MonoBehaviour
         Debug.Log("Exited masked state");
         chickenMask.SetActive(false);
         maskOn = false;
+        HideAllMaskFeathers();
     }
 
     private void UpdateFeatherUI()
@@ -149,6 +156,29 @@ public class Mask : MonoBehaviour
         {
             featherCountText.text =
                 $"Feathers: {featherCount} / {featherMax}";
+        }
+    }
+
+    private void HideAllMaskFeathers()
+    {
+        for (int i = 0; i < maskFeathers.Length; i++)
+        {
+            if (maskFeathers[i] != null)
+                maskFeathers[i].SetActive(false);
+        }
+    }
+
+    private void UpdateMaskFeatherVisuals()
+    {
+        int visibleCount = 0;
+        if (maskTime > 16f) visibleCount = 3;
+        else if (maskTime > 8f) visibleCount = 2;
+        else if (maskTime > 0f) visibleCount = 1;
+
+        for (int i = 0; i < maskFeathers.Length; i++)
+        {
+            if (maskFeathers[i] != null)
+                maskFeathers[i].SetActive(i < visibleCount);
         }
     }
 
