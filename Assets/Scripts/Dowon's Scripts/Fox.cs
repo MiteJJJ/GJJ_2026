@@ -66,9 +66,6 @@ public class Fox : MonoBehaviour
                 audioManager.PlayHome();
             }
 
-            // recharge feathers
-            mask.RefillFeathers();
-
             // deposit carried eggs as score
             updateEggs.DepositEggs();
         }
