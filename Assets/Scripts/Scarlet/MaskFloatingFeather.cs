@@ -13,14 +13,14 @@ public class MaskFloatingFeather : MonoBehaviour
 
     IEnumerator FloatCoroutine()
     {
-        Vector3 startPos = transform.position;
+        Vector3 startLocalPos = transform.localPosition;
         float time = 0;
 
         while (true)
         {
             time += Time.deltaTime;
             float offset = Mathf.Sin(time / floatDuration * Mathf.PI * 2) * floatDistance;
-            transform.position = new Vector3(startPos.x, startPos.y + offset, startPos.z);
+            transform.localPosition = new Vector3(startLocalPos.x, startLocalPos.y + offset, startLocalPos.z);
             yield return null;
         }
     }
