@@ -101,16 +101,16 @@ MonoBehaviour:
     m_Value: 0.9
   intensity:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 1.2
   scatter:
     m_OverrideState: 1
-    m_Value: 0.669
+    m_Value: 0.773
   clamp:
     m_OverrideState: 0
     m_Value: 65472
   tint:
     m_OverrideState: 1
-    m_Value: {r: 0.52067167, g: 0.66666657, b: 0.34171897, a: 1}
+    m_Value: {r: 0.24612486, g: 0.44654083, b: 0, a: 1}
   highQualityFiltering:
     m_OverrideState: 0
     m_Value: 0
